@@ -48,3 +48,11 @@
 .div-rounded-top {
     border-radius: 25px 25px 0px 0px;
 }
+
+.carousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    margin-right: 10px;
+    border-radius: 100%;
+}
