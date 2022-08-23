@@ -69,63 +69,105 @@
                 <hr>
                 <form class="row g-4 mt-4">
                     <div class="col-md-6">
-                      <label for="inputEmail4" class="form-label">First Name *</label>
-                      <input type="text" class="form-control" placeholder="First name" id="inputEmail4">
+                        <label for="inputEmail4" class="form-label">First Name <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="First name" id="inputEmail4" required>
                     </div>
                     <div class="col-md-6">
-                      <label for="inputPassword4" class="form-label">Last Name *</label>
-                      <input type="text" class="form-control" placeholder="Last name" id="inputPassword4">
+                        <label for="inputPassword4" class="form-label">Last Name <span class="text-danger">*</label>
+                        <input type="text" class="form-control" placeholder="Last name" id="inputPassword4" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Email *</label>
-                        <input type="email" class="form-control" placeholder="email@domain.com" id="inputEmail4">
-                      </div>
-                      <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Phone *</label>
-                        <input type="text" class="form-control" placeholder="Your Phone" id="inputPassword4">
-                      </div>
-                      <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Email <span class="text-danger">*</label>
+                        <input type="email" class="form-control" placeholder="email@domain.com" id="inputEmail4"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Phone <span class="text-danger">*</label>
+                        <input type="text" class="form-control" placeholder="Your Phone" id="inputPassword4" required>
+                    </div>
+                    <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Address Line 1</label>
                         <input type="text" class="form-control" placeholder="Your Address Line 1" id="inputEmail4">
-                      </div>
-                      <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                         <label for="inputPassword4" class="form-label">Address Line 2</label>
                         <input type="text" class="form-control" placeholder="Your Address Line 2" id="inputPassword4">
-                      </div>
-                      <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">City</label>
                         <input type="text" class="form-control" placeholder="Your City" id="inputEmail4">
-                      </div>
-                      <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                         <label for="inputPassword4" class="form-label">State/Province/Region</label>
                         <input type="text" class="form-control" placeholder="State/Province/Region" id="inputPassword4">
-                      </div>
-                      <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">ZIP code/Postal code</label>
                         <input type="text" class="form-control" placeholder="ZIP code/Postal code" id="inputEmail4">
-                      </div>
-                      <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                         <label for="inputPassword4" class="form-label">Country</label>
                         <input type="text" class="form-control" placeholder="Country" id="inputPassword4">
-                      </div>
-                      <div class="col-md-12">
+                    </div>
+                    <div class="col-md-12">
                         <label for="exampleFormControlTextarea1" class="form-label">Special Requirements</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Special Requirements" rows="4"></textarea>
-                      </div>
-                      <div>
-                        <h4 class="fw-bold mb-4">Select Payment Method</h4>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Special Requirements" rows="4"></textarea>
+                    </div>
+                    <div>
+                        <h4 class="fw-bold my-4">Select Payment Method</h4>
+                        <div class="d-flex my-4">
+                            <div class="form-check me-5">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1" checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Credit/Debit Card
+                                </label>
+                                <!-- <label for="input1" class="form-label">Name On Card</label>
+                                <input type="text" class="form-control" placeholder="Your City" id="input1"> -->
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Bkash
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center pb-4">
+                            <div class="col-md-6 py-3">
+                                <label for="inputPassword4" class="form-label">Name On Card <span class="text-danger">*</label>
+                                <input type="text" class="form-control" placeholder="Name On Card" id="inputPassword4">
+                            </div>
+                            <div class="col-md-6 py-3">
+                                <label for="inputPassword4" class="form-label">Card Number <span class="text-danger">*</label>
+                                <input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" id="inputPassword4">
+                            </div>
+                            <div class="col-md-6 py-3">
+                                <label for="inputPassword4" class="form-label">Expire Date <span class="text-danger">*</label>
+                                <input type="date" class="form-control" placeholder="Expire Date" id="inputPassword4">
+                            </div>
+                            <div class="col-md-6 py-3">
+                                <label for="inputPassword4" class="form-label">CVV <span class="text-danger">*</label>
+                                <input type="text" class="form-control" placeholder="xxxx" id="inputPassword4">
+                            </div>
+                        </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
-                                I have read and accept the<a target="_blank" href=""> terms and conditions</a> and <a href="https://shinetheme.com/travelerdata/citytour/privacy-and-cookies/" target="_blank">Privacy Policy</a>
+                                I have read and accept the<a target="_blank" href="" class="text-danger"> terms and
+                                    conditions</a> and <a
+                                    href="https://shinetheme.com/travelerdata/citytour/privacy-and-cookies/"
+                                    target="_blank" class="text-danger">Privacy Policy</a>
                             </label>
-                          </div>
-                      </div>
+                        </div>
+                    </div>
 
                     <div class="col-12">
-                      <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-danger px-5">Submit</button>
                     </div>
-                  </form>
+                </form>
             </div>
             <div class="col-4">
                 <h4 class="fw-bold mb-4">Your Booking</h4>
