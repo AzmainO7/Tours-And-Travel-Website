@@ -53,7 +53,117 @@
                             </ul>
                         </li>
                     </ul>
-                    <a href="Login.html" class="btn btn-danger rounded-pill ms-auto"><i class="bi bi-person me-2"></i>Login</a>
+                    <!-- Button trigger modal -->
+                    <a href="Login.html" class="btn btn-danger rounded-pill ms-auto" data-bs-toggle="modal"
+                        data-bs-target="#loginModal"><i class="bi bi-person me-2"></i>Login / Register</a>
+
+                    <!-- Modal LOGIN -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModalLabel">SIGN IN</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <form action="" method="POST" class="login-email">
+                                            <div class="row py-2">
+                                                <label for="email" class="form-label">Email <span
+                                                        class="text-danger">*</label>
+                                                <input type="email" class="form-control" placeholder="Email" id="email"
+                                                    value="" required>
+                                            </div>
+                                            <div class="row py-2">
+                                                <label for="password" class="form-label">Password <span
+                                                        class="text-danger">*</label>
+                                                <input type="password" class="form-control" placeholder="Password"
+                                                    id="password" value="" required>
+                                            </div>
+                                            <div class="row py-4">
+                                                <button name="submit" class="btn btn-danger">Login</button>
+                                            </div>
+                                            <p class="">Don't Have An Account?<a href="" class="text-danger ps-2"
+                                                    data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                    data-bs-target="#registerModal"
+                                                    style="text-decoration: none;">Register Here</a>.</p>
+                                        </form>
+
+                                        <p class="text-center text-muted">or</p>
+                                        <p class="text-center fs-5 mb-4">Login Using Social Media</p>
+                                        <div class="row justify-content-center mb-4">
+                                            <div class="col-6 text-center">
+                                                <div class="py-2 div-rounded-less socialFacebook">
+                                                    <a href="#"><i class="bi bi-facebook facebook"></i>Facebook</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                <div class="py-2 div-rounded-less socialGoogle">
+                                                    <a href="#"><i class="bi bi-google google"></i>Google</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal REGISTER -->
+                    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="registerModalLabel">SIGN UP</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <form action="" method="POST" class="login-email">
+                                            <div class="row py-2">
+                                                <label for="username" class="form-label">Username <span
+                                                        class="text-danger">*</label>
+                                                <input type="text" class="form-control" placeholder="Username"
+                                                    id="username" value="" required>
+                                            </div>
+                                            <div class="row py-2">
+                                                <label for="email" class="form-label">Email <span
+                                                        class="text-danger">*</label>
+                                                <input type="email" class="form-control" placeholder="Email" id="email"
+                                                    value="" required>
+                                            </div>
+                                            <div class="row py-2">
+                                                <label for="password" class="form-label">Password <span
+                                                        class="text-danger">*</label>
+                                                <input type="password" class="form-control" placeholder="Password"
+                                                    id="password" value="" required>
+                                            </div>
+                                            <div class="row py-2">
+                                                <label for="cpassword" class="form-label">Confirm Password <span
+                                                        class="text-danger">*</label>
+                                                <input type="password" class="form-control"
+                                                    placeholder="Confirm Password" id="cpassword" value="" required>
+                                            </div>
+                                            <div class="row py-4">
+                                                <button name="submit" class="btn btn-danger">Register</button>
+                                            </div>
+                                            <p class="">Already Have An Account?<a href="" class="text-danger ps-2"
+                                                    data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                    data-bs-target="#loginModal" style="text-decoration: none;">Login
+                                                    Here</a>.</p>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </nav>
@@ -351,7 +461,8 @@
                         </div>
                         <div class="card-body">
                             <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>California</h6>
-                            <h5 class="card-title fw-bolder mb-3">Cannes and Antibes Night Tour the Seine Extraordinaire</h5>
+                            <h5 class="card-title fw-bolder mb-3">Cannes and Antibes Night Tour the Seine Extraordinaire
+                            </h5>
                             <p class="text-muted mb-5"><i class="bi bi-star-fill text-warning me-2"></i><span
                                     class="text-dark fw-bolder">5 </span>(3 reviews)</p>
                             <div class="card-footer bg-white pt-4 pb-0">

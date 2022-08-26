@@ -66,3 +66,53 @@
         padding-right: 25px;
     }
 }
+
+.socialFacebook:hover {
+    background-color: #4267B2;
+    color: white;
+}
+
+.socialFacebook:hover .facebook {
+    text-decoration: none;
+    color: #fff;
+}
+
+.socialFacebook:hover a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.facebook {
+    text-decoration: none;
+    color: #4267B2;
+    padding-right: 10px;
+}
+
+.socialGoogle:hover {
+    background-color: #db4a39;
+    color: white;
+}
+
+.socialGoogle:hover .google {
+    text-decoration: none;
+    color: #fff;
+}
+
+.socialGoogle:hover a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.google {
+    text-decoration: none;
+    color: #db4a39;
+    padding-right: 10px;
+}
+
+.socialFacebook a,
+.socialGoogle a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-align: center;
+    color: black;
+}
