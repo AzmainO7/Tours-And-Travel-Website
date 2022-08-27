@@ -130,7 +130,7 @@ if (isset($_POST['register'])) {
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="about.php">ABOUT US</a></li>
-                                <li><a class="dropdown-item" href="contactUs.php">CONTACT</a></li>
+                                <li><a class="dropdown-item" href="contact.php">CONTACT</a></li>
                                 <li><a class="dropdown-item" href="faqs.php">FAQs</a></li>
                             </ul>
                         </li>
