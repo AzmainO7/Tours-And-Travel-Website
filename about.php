@@ -1,3 +1,10 @@
+<?php
+
+include 'config.php';
+include 'nav_bar.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -14,57 +21,10 @@
 
 <body>
 
-    <!-- navigation bar START -->
-    <section>
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container">
-                <a class="navbar-brand fs-2 pe-5" href="#">
-                    <i class="bi bi-airplane me-2 text-danger"></i>
-                    E-Tour</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item me-4">
-                            <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                        </li>
-                        <li class="nav-item me-4">
-                            <a class="nav-link" href="listings.html">LISTINGS</a>
-                        </li>
-                        <li class="nav-item me-4">
-                            <a class="nav-link" href="tours.html">TOURS</a>
-                        </li>
-                        <li class="nav-item me-4">
-                            <a class="nav-link" href="destinations.html">DESTINATIONS</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                MORE
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="about.html">ABOUT US</a></li>
-                                <li><a class="dropdown-item" href="contactUs.html">CONTACT</a></li>
-                                <li><a class="dropdown-item" href="faqs.html">FAQs</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <a href="Login.html" class="btn btn-danger rounded-pill ms-auto"><i class="bi bi-person me-2"></i>Login</a>
-                </div>
-            </div>
-        </nav>
-
-    </section>
-    <!-- navigation bar END -->
-
     <!-- story,mission -->
 
 
-    <div class="container">
+    <div class="container" style="margin-top: 75px;">
         <div class="vc_row wpb_row st bg-holder">
             <div class='container '><div class='row'>
 	<div class="wpb_column column_container col-md-12">

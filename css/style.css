@@ -116,3 +116,13 @@
     text-align: center;
     color: black;
 }
+
+.modal-backdrop {
+    height: 100%;
+    z-index: 100001 !important;
+    position: unset !important;
+}
+
+.modal { 
+    z-index: 100001 !important;
+}
