@@ -3,6 +3,8 @@
 include 'config.php';
 include 'nav_bar.php';
 
+error_reporting(0);
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +43,7 @@ include 'nav_bar.php';
                                 <div class="col-4 ps-4 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-geo-alt me-2"></i>Destination</label>
                                     <select class="form-control div-rounded-less" name="" id="">
-                                        <option>New York City</option>
+                                        <option>New York</option>
                                         <option>San Francisco</option>
                                         <option>California</option>
                                         <option>New Jersey</option>
@@ -50,12 +52,12 @@ include 'nav_bar.php';
                                 <div class="col-3 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-calendar-check me-2"></i>Check
                                         in</label>
-                                    <input type="date" class="form-control div-rounded-less" placeholder="Check in" aria-label="Check in">
+                                    <input type="date" value="<?php echo date("Y-m-d"); ?>" class="form-control div-rounded-less" placeholder="Check in" aria-label="Check in">
                                 </div>
                                 <div class="col-3 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-calendar-minus me-2"></i>Check
                                         out</label>
-                                    <input type="date" class="form-control div-rounded-less" placeholder="Check out" aria-label="Check out">
+                                    <input type="date" value="<?php echo date("Y-m-d"); ?>" class="form-control div-rounded-less" placeholder="Check out" aria-label="Check out">
                                 </div>
                                 <div class="col-2">
                                     <a href="listings.php" class="btn btn-secondary div-rounded-less px-xxl-4 py-xxl-2 my-3">SEARCH</a>
@@ -84,15 +86,15 @@ include 'nav_bar.php';
                                 <div class="col-3 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-calendar-check me-2"></i>Check
                                         in</label>
-                                    <input type="date" class="form-control rounded-pill" placeholder="Check in" aria-label="Check in">
+                                    <input type="date" value="<?php echo date("Y-m-d"); ?>" class="form-control rounded-pill" placeholder="Check in" aria-label="Check in">
                                 </div>
                                 <div class="col-3 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-calendar-minus me-2"></i>Check
                                         out</label>
-                                    <input type="date" class="form-control rounded-pill" placeholder="Check out" aria-label="Check out">
+                                    <input type="date" value="<?php echo date("Y-m-d"); ?>" class="form-control rounded-pill" placeholder="Check out" aria-label="Check out">
                                 </div>
                                 <div class="col-2">
-                                    <button class="btn btn-secondary rounded-pill px-xxl-4 py-xxl-2 my-3">SEARCH</button>
+                                    <a href="listings.php" class="btn btn-secondary rounded-pill px-xxl-4 py-xxl-2 my-3">SEARCH</a>
                                 </div>
                             </div>
                         </div>
@@ -117,15 +119,15 @@ include 'nav_bar.php';
                                 <div class="col-3 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-calendar-check me-2"></i>Check
                                         in</label>
-                                    <input type="date" class="form-control rounded-pill" placeholder="Check in" aria-label="Check in">
+                                    <input type="date" value="<?php echo date("Y-m-d"); ?>" class="form-control rounded-pill" placeholder="Check in" aria-label="Check in">
                                 </div>
                                 <div class="col-3 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-calendar-minus me-2"></i>Check
                                         out</label>
-                                    <input type="date" class="form-control rounded-pill" placeholder="Check out" aria-label="Check out">
+                                    <input type="date" value="<?php echo date("Y-m-d"); ?>" class="form-control rounded-pill" placeholder="Check out" aria-label="Check out">
                                 </div>
                                 <div class="col-2">
-                                    <button class="btn btn-secondary rounded-pill px-xxl-4 py-xxl-2 my-3">SEARCH</button>
+                                    <a href="listings.php" class="btn btn-secondary rounded-pill px-xxl-4 py-xxl-2 my-3">SEARCH</a>
                                 </div>
                             </div>
                         </div>

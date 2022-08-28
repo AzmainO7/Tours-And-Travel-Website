@@ -123,6 +123,10 @@
     position: unset !important;
 }
 
-.modal { 
+.modal {
     z-index: 100001 !important;
+}
+
+.current {
+	color: #df3e23;
 }

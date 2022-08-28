@@ -1,3 +1,11 @@
+<?php
+
+include 'config.php';
+
+error_reporting(0);
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,12 +26,13 @@
             <h3 class="p-4">Admin <br> Panel</h3>
             <hr>
             <div class="list-group">
-                <a href="admin_panel.html" class="btn btn-dark p-3 text-start" aria-current="true">Dashboard</a>
-                <a href="admin_users.html" class="btn btn-dark p-3 text-start">Users</a>
-                <a href="admin_tours.html" class="btn btn-dark p-3 text-start">Tours</a>
-                <a href="admin_bookings.html" class="btn btn-light m-3 text-start">Bookings</a>
+                <a href="admin_panel.php" class="btn btn-dark p-3 text-start" aria-current="true">Dashboard</a>
+                <a href="admin_users.php" class="btn btn-dark p-3 text-start">Users</a>
+                <a href="admin_tours.php" class="btn btn-dark p-3 text-start">Tours</a>
+                <a href="admin_bookings.php" class="btn btn-light m-3 text-start">Bookings</a>
+                <a href="admin_inbox.php" class="btn btn-dark p-3 text-start">Inbox</a>
                 <hr>
-                <a href="index.html" class="btn btn-dark text-start">Back to site</a>
+                <a href="index.php" class="btn btn-dark text-start">Back to site</a>
             </div>
         </div>
         <div class="col-sm-10 bg-light text-dark p-5">
@@ -34,8 +43,6 @@
                     data-bs-target="#exampleModal">
                     Add New Booking
                 </button>
-                <button type="button" class="btn btn-danger px-5 me-3">Remove Booking</button>
-                <button type="button" class="btn btn-danger px-5">Update Booking</button>
             </div>
 
             <!-- Modal -->
@@ -59,34 +66,59 @@
             </div>
 
             <table class="table mt-5 bg-white">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Tour Id</th>
+            <th scope="col">Adults</th>
+            <th scope="col">Children</th>
+            <th scope="col">Infants</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Cancel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+
+          $sql = "SELECT * FROM bookings";
+          $stmt = mysqli_stmt_init($conn);
+          if (!mysqli_stmt_prepare($stmt, $sql)) {
+            echo "SQL statement failed";
+          } else {
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo "<tr>
+              <th scope='row'>$row[id]</th>
+               <td>$row[firstname]</td>
+               <td>$row[lastname]</td>
+               <td>$row[email]</td>
+               <td>$row[phone]</td>
+               <td>$row[tour_id]</td>
+               <td>$row[adult_no]</td>
+               <td>$row[children_no]</td>
+               <td>$row[infant_no]</td>
+               <td>$row[subtotal]</td>
+               <td>   
+                <a href='' class='btn btn-primary btn-sm editbtn'>Edit</a>
+              </td>
+              <td>   
+                <a href='' class='btn btn-danger btn-sm'>Cancel</a>
+              </td>
+              </tr>";
+            }
+          }
+
+          ?>
+        </tbody>
+      </table>
+
         </div>
     </div>
 

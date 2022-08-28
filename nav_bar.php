@@ -104,7 +104,7 @@ if (isset($_POST['register'])) {
         <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
             <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow"> -->
             <div class="container">
-                <a class="navbar-brand fs-2 pe-5" href="#">
+                <a class="navbar-brand fs-2 pe-5" href="admin_panel.php">
                     <i class="bi bi-airplane me-2 text-danger"></i>
                     E-Tour</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,10 +116,7 @@ if (isset($_POST['register'])) {
                             <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item me-4">
-                            <a class="nav-link" href="listings.php">LISTINGS</a>
-                        </li>
-                        <li class="nav-item me-4">
-                            <a class="nav-link" href="tours.php">TOUR</a>
+                            <a class="nav-link" href="listings.php">TOURS</a>
                         </li>
                         <li class="nav-item me-4">
                             <a class="nav-link" href="destinations.php">DESTINATIONS</a>

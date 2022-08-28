@@ -22,7 +22,7 @@ include 'nav_bar.php';
 <body>
 
     <!-- FAQs START -->
-    <div class="container my-5 pb-5 pt-5" style="margin-top: 75px;">
+    <div class="container mb-5 pb-5 pt-5" style="margin-top: 75px;">
         <div>
             <div class="mb-5 pb-3 text-center">
                 <h1 class="fw-bold">Frequently Asked Questions</h1>
