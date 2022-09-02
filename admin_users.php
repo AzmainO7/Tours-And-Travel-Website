@@ -49,7 +49,7 @@ if (isset($_POST['register'])) {
 
 <body>
   <div class="row justify-content-center m-0">
-    <div class="col-sm-2 bg-dark text-light text-center" style="height: 100vh;">
+    <div class="col-sm-2 bg-dark text-light text-center sticky-top" style="height: 100vh;">
       <h3 class="p-4">Admin <br> Panel</h3>
       <hr>
       <div class="list-group">
@@ -159,7 +159,7 @@ if (isset($_POST['register'])) {
 
                 <form action="updatecode.php" method="POST">
 
-                <input type="hidden" name="update_id" id="update_id">
+                  <input type="hidden" name="update_id" id="update_id">
                   <input type="hidden" value="<?php echo $id; ?>">
 
                   <div class="row py-2">
@@ -193,7 +193,8 @@ if (isset($_POST['register'])) {
             <th scope="col">Id</th>
             <th scope="col">Username</th>
             <th scope="col">Email</th>
-            <th scope="col">Action</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
           </tr>
         </thead>
 
@@ -214,7 +215,9 @@ if (isset($_POST['register'])) {
             <td>$row[email]</td>
             <td>   
               <a href='' class='btn btn-primary btn-sm editbtn'>Update</a>
-              <a href='' class='btn btn-danger btn-sm'>Delete</a>
+            </td>
+            <td>   
+              <a href='delete_user.php?id=$row[id]' class='btn btn-danger btn-sm'>Delete</a>
             </td>
           </tr>";
           }
@@ -226,10 +229,10 @@ if (isset($_POST['register'])) {
     </div>
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  
-  <script>
+  <!-- <script>
     $(document).ready(function() {
 
       $('.editbtn').on('click', function() {
@@ -250,8 +253,8 @@ if (isset($_POST['register'])) {
         $('#password').val(data[3]);
       });
     });
-  </script>
-  
+  </script> -->
+
 </body>
 
 </html>

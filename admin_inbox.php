@@ -48,7 +48,7 @@ if ($result = mysqli_query($conn, $sql)) {
 
 <body>
     <div class="row justify-content-center m-0">
-        <div class="col-sm-2 bg-dark text-light text-center" style="height: 100vh;">
+        <div class="col-sm-2 bg-dark text-light text-center sticky-top" style="height: 100vh;">
             <h3 class="p-4">Admin <br> Panel</h3>
             <hr>
             <div class="list-group">
@@ -56,12 +56,51 @@ if ($result = mysqli_query($conn, $sql)) {
                 <a href="admin_users.php" class="btn btn-dark p-3 text-start">Users</a>
                 <a href="admin_tours.php" class="btn btn-dark p-3 text-start">Tours</a>
                 <a href="admin_bookings.php" class="btn btn-dark p-3 text-start">Bookings</a>
-                <a href="admin_inbox.php" class="btn btn-light m-3 text-start">Inbox</a>
+                <a href="admin_inbox.php" class="btn btn-light m-3 text-dstart">Inbox</a>
                 <hr>
                 <a href="index.php" class="btn btn-dark text-start">Back to site</a>
             </div>
         </div>
         <div class="col-sm-10 bg-light text-dark p-5">
+        <table class="table bg-white">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Message</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+
+          $sql = "SELECT * FROM Tours";
+          $stmt = mysqli_stmt_init($conn);
+          if (!mysqli_stmt_prepare($stmt, $sql)) {
+            echo "SQL statement failed";
+          } else {
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo "<tr>
+              <th scope='row'>$row[id]</th>
+               <td>$row[title]</td>
+               <td>$row[price]</td>
+               <td>$row[destination]</td>
+               <td>$row[duration]</td>
+               <td>   
+                <a href='admin_tours_add.php?id=$row[id]' class='btn btn-danger btn-sm'>Reply</a>
+              </td>
+              </tr>";
+            }
+          }
+
+          ?>
+        </tbody>
+      </table>
 
         </div>
     </div>

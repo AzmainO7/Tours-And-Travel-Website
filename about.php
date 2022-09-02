@@ -79,7 +79,7 @@ include 'nav_bar.php';
 
 		</div>
 	</div>
-<div class="vc_empty_space"   style="height: 30px"><span class="vc_empty_space_inner"></span></div></div>
+<div class="vc_empty_space" style="height: 30px"><span class="vc_empty_space_inner"></span></div></div>
 	</div> 
 </div><!--End .row--></div><!--End .container--></div>
 
@@ -95,14 +95,14 @@ include 'nav_bar.php';
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-3">
-                    <div class="img-wrapper rounded-circle m-5">
+                    <div class="img-wrapper p-5">
                         <img class="mw-100" src="images/azmain.jpg" alt="" width="1200" height="250">
                     </div>
-                    <h4>Md Azmain Mahtab</h4>
+                    <h4>Md. Azmain Mahtab</h4>
                     <p>CSE, AUST</p>
                 </div>
                 <div class="col-lg-3">
-                    <div class="img-wrapper rounded-circle m-5">
+                    <div class="img-wrapper p-5">
                         <img class="mw-100" src="images/piash.jpg" alt="" width="1200" height="250" >
                     </div>
                     <h4>Md. Shiful Islam Piash</h4>

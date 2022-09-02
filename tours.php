@@ -24,7 +24,7 @@ include 'nav_bar.php';
     <div class="container mt-4 mb-5">
         <?php
 
-        $id = $_GET["id"]; 
+        $id = $_GET["id"];
         // $id = 2; 
         $sql = "SELECT * FROM Tours WHERE id = $id";
         $stmt = mysqli_stmt_init($conn);
@@ -45,9 +45,23 @@ include 'nav_bar.php';
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
+                                ';
+                if ($row["image_3"] != null) {
+                    echo '<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    ';
+                }
+
+                if ($row["image_4"] != null) {
+                    echo '<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
+                                    ';
+                }
+
+                if ($row["image_5"] != null) {
+                    echo '<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
+                                    ';
+                }
+                echo '  
+                                
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -60,23 +74,39 @@ include 'nav_bar.php';
                                     <div class="carousel-caption d-none d-md-block">
                                     </div>
                                 </div>
-                                <div class="carousel-item">
-                                    <img src=' . $row["image_3"] . ' class="img-fluid px-0" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src=' . $row["image_4"] . ' class="d-block mx-auto mw-100" style="height: 65vh;" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-    
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src=' . $row["image_5"] . ' class="d-block mx-auto mw-100" style="height: 65vh;" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-    
-                                    </div>
-                                </div>
+                                ';
+                if ($row["image_3"] != null) {
+                    echo '
+                    <div class="carousel-item">
+                        <img src=' . $row["image_3"] . ' class="img-fluid px-0" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div> 
+                    ';
+                }
+
+                if ($row["image_4"] != null) {
+                    echo '
+                    <div class="carousel-item">
+                        <img src=' . $row["image_4"] . ' class="d-block mx-auto mw-100" style="height: 65vh;" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                    ';
+                }
+                if ($row["image_5"] != null) {
+                    echo '
+                    <div class="carousel-item">
+                        <img src=' . $row["image_5"] . ' class="d-block mx-auto mw-100" style="height: 65vh;" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+                    ';
+                }
+
+                echo '
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -93,8 +123,8 @@ include 'nav_bar.php';
     
                     ';
 
-                    if($row["ratings"]>=1 && $row["ratings"]<2) {
-                        echo '
+                if ($row["ratings"] >= 1 && $row["ratings"] < 2) {
+                    echo '
                         <div class="row justify-content-center">
                         <div class="col-8">
                             <h2 class="fw-bold mb-3">' . $row["title"] . '</h2>
@@ -112,10 +142,8 @@ include 'nav_bar.php';
                     </div>    
                     <hr>
                     ';
-                    }
-
-                    else if($row["ratings"]>=2 && $row["ratings"]<3) {
-                        echo '
+                } else if ($row["ratings"] >= 2 && $row["ratings"] < 3) {
+                    echo '
                         <div class="row justify-content-center">
                         <div class="col-8">
                             <h2 class="fw-bold mb-3">' . $row["title"] . '</h2>
@@ -133,10 +161,8 @@ include 'nav_bar.php';
                     </div>    
                     <hr>
                     ';
-                    }
-
-                    else if($row["ratings"]>=3 && $row["ratings"]<4) {
-                        echo '
+                } else if ($row["ratings"] >= 3 && $row["ratings"] < 4) {
+                    echo '
                         <div class="row justify-content-center">
                         <div class="col-8">
                             <h2 class="fw-bold mb-3">' . $row["title"] . '</h2>
@@ -154,10 +180,8 @@ include 'nav_bar.php';
                     </div>    
                     <hr>
                     ';
-                    }
-
-                    else if($row["ratings"]>=4 && $row["ratings"]<5) {
-                        echo '
+                } else if ($row["ratings"] >= 4 && $row["ratings"] < 5) {
+                    echo '
                         <div class="row justify-content-center">
                         <div class="col-8">
                             <h2 class="fw-bold mb-3">' . $row["title"] . '</h2>
@@ -175,10 +199,8 @@ include 'nav_bar.php';
                     </div>    
                     <hr>
                     ';
-                    }
-
-                    else if($row["ratings"]==5) {
-                        echo '
+                } else if ($row["ratings"] == 5) {
+                    echo '
                         <div class="row justify-content-center">
                         <div class="col-8">
                             <h2 class="fw-bold mb-3">' . $row["title"] . '</h2>
@@ -196,10 +218,8 @@ include 'nav_bar.php';
                     </div>    
                     <hr>
                     ';
-                    }
-
-                    else if($row["ratings"]>1 && $row["ratings"]<2) {
-                        echo '
+                } else if ($row["ratings"] > 1 && $row["ratings"] < 2) {
+                    echo '
                         <div class="row justify-content-center">
                         <div class="col-8">
                             <h2 class="fw-bold mb-3">' . $row["title"] . '</h2>
@@ -217,8 +237,8 @@ include 'nav_bar.php';
                     </div>    
                     <hr>
                     ';
-                    }else{
-                        echo '
+                } else {
+                    echo '
                         <div class="row justify-content-center">
                         <div class="col-8">
                             <h2 class="fw-bold mb-3">' . $row["title"] . '</h2>
@@ -236,9 +256,9 @@ include 'nav_bar.php';
                     </div>    
                     <hr>
                     ';
-                    }
+                }
 
-                    echo '
+                echo '
                     <div class="row justify-content-center pt-2 px-2">
                         <div class="col-lg-3">
                             <div class="d-flex justify-content-start pb-2">
@@ -295,8 +315,18 @@ include 'nav_bar.php';
                         <h6>HIGHLIGHTS</h6>
                         <ul class="list-group ms-5 mt-4 text-muted">
                             <li class="mb-3">' . $row["highlights_1"] . '</li>
-                            <li class="mb-3">' . $row["highlights_2"] . '</li>
-                            <li class="mb-3">' . $row["highlights_3"] . '</li>
+                            ';
+                if ($row["highlights_2"] != null) {
+                    echo '
+                                <li class="mb-3">' . $row["highlights_2"] . '</li>
+                                ';
+                }
+                if ($row["highlights_2"] != null) {
+                    echo '
+                                <li class="mb-3">' . $row["highlights_3"] . '</li>
+                                ';
+                }
+                echo '                             
                         </ul>
                     </div>
                     <!-- tour overview END -->
@@ -311,18 +341,18 @@ include 'nav_bar.php';
                             <div class="accordion-item my-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 1: Arrive San Francisco</span>
+                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 1: <span>' . $row["itn_day1"] . '</span></span>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                                     <div class="accordion-body text-muted fs-6">
     
-                                        <div class="d-flex justify-content-center p-2">
+                                        <div class="d-flex justify-content-start p-2">
                                             <div class="img-wrapper">
                                                 <img src="images/Day 1.jpg" class="mw-100" alt="">
                                             </div>
                                             <div>
-                                                <p class="ps-4">' . $row["itn_day1"] . '</p>
+                                                <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
                                             </div>
                                         </div>
     
@@ -333,27 +363,30 @@ include 'nav_bar.php';
                             <div class="accordion-item my-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 2: San Francisco Sightseeing – Napa</span>
+                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 2: <span>' . $row["itn_day2"] . '</span></span>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                     <div class="accordion-body text-muted fs-6">
-                                        <div class="d-flex justify-content-center p-2">
-                                            <div class="img-wrapper">
-                                                <img src="images/Day 2.jpg" class="mw-100" alt="">
-                                            </div>
-                                            <div>
-                                                <p class="ps-4">' . $row["itn_day2"] . '</p>
-                                            </div>
-                                        </div>
+                                    <div class="d-flex justify-content-start p-2">
+                                    <div class="img-wrapper">
+                                        <img src="images/Day 1.jpg" class="mw-100" alt="">
+                                    </div>
+                                    <div>
+                                        <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
+                                    </div>
+                                </div>
                                     </div>
                                 </div>
                             </div>
     
-                            <div class="accordion-item my-2">
+                            ';
+                if ($row["itn_day3"] != null) {
+                    echo '
+                                <div class="accordion-item my-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 3: Lake Tahoe Sightseeing</span>
+                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 3: <span>' . $row["itn_day3"] . '</span></span>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
@@ -363,17 +396,21 @@ include 'nav_bar.php';
                                                 <img src="images/Day 3.jpg" class="mw-100" alt="">
                                             </div>
                                             <div>
-                                                <p class="ps-4">' . $row["itn_day3"] . '</p>
+                                                <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-    
-                            <div class="accordion-item my-2">
+                                ';
+                }
+
+                if ($row["itn_day4"] != null) {
+                    echo '
+                                <div class="accordion-item my-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 4: Monterey, Carmel and 17-Mile Drive</span>
+                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 4: <span>' . $row["itn_day4"] . '</span></span>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
@@ -383,18 +420,20 @@ include 'nav_bar.php';
                                                 <img src="images/Day 4.jpg" class="mw-100" alt="">
                                             </div>
                                             <div>
-                                                <p class="ps-4">' . $row["itn_day4"] . '</p>
+                                                <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-    
-                            <div class="accordion-item my-2">
+                                ';
+                }
+                if ($row["itn_day5"] != null) {
+                    echo '
+                                <div class="accordion-item my-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 5: Monterey – Roaring Camp – Depart San
-                                            Francisco</span>
+                                        <i class="bi bi-calendar-date text-danger fs-5 me-3"></i><span class="fw-bold fs-6">Day 5: <span>' . $row["itn_day5"] . '</span></span>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
@@ -404,12 +443,15 @@ include 'nav_bar.php';
                                                 <img src="images/Day 5.jpg" class="mw-100" alt="">
                                             </div>
                                             <div>
-                                                <p class="ps-4">' . $row["itn_day5"] . '</p>
+                                                <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                                ';
+                }
+                echo '
     
                         </div>
                     </div>
@@ -424,15 +466,36 @@ include 'nav_bar.php';
                             <div class="col-6">
                                 <ol class="list-group list-group-numbered">
                                     <li class="list-group-item list-group-item-action list-group-item-success">' . $row["included_1"] . '</li>
-                                    <li class="list-group-item list-group-item-action list-group-item-success">' . $row["included_2"] . '</li>
-                                    <li class="list-group-item list-group-item-action list-group-item-success">' . $row["included_3"] . '</li>
+                                    ';
+                if ($row["included_2"] != null) {
+                    echo '
+                                        <li class="list-group-item list-group-item-action list-group-item-success">' . $row["included_2"] . '</li>
+                                        ';
+                }
+                if ($row["included_3"] != null) {
+                    echo '
+                                        <li class="list-group-item list-group-item-action list-group-item-success">' . $row["included_3"] . '</li>
+                                        ';
+                }
+                echo '                                           
                                 </ol>
                             </div>
                             <div class="col-6">
                                 <ol class="list-group list-group-numbered">
                                     <li class="list-group-item list-group-item-action list-group-item-danger">' . $row["excluded_1"] . '</li>
-                                    <li class="list-group-item list-group-item-action list-group-item-danger">' . $row["excluded_2"] . '</li>
-                                    <li class="list-group-item list-group-item-action list-group-item-danger">' . $row["excluded_3"] . '</li>
+                                    ';
+                if ($row["excluded_2"] != null) {
+                    echo '
+                                        <li class="list-group-item list-group-item-action list-group-item-danger">' . $row["excluded_2"] . '</li>
+                                        ';
+                }
+                if ($row["excluded_3"] != null) {
+                    echo '
+                                        <li class="list-group-item list-group-item-action list-group-item-danger">' . $row["excluded_3"] . '</li>
+                                        ';
+                }
+                echo '  
+                                    
                                 </ol>
                             </div>
                         </div>
@@ -485,39 +548,52 @@ include 'nav_bar.php';
                                 </div>
                             </div>
     
-                            <div class="accordion-item py-2">
-                                <h2 class="accordion-header" id="flush-headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        <i class="bi bi-question-circle text-danger fs-5 me-3"></i><span class="fw-bold fs-6">' . $row["faq_2"] . '</span>
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body text-muted fs-6">Airport transfers are not included in the
-                                        price of this
-                                        tour, however you can book for an arrival transfer in advance. In this case a tour
-                                        operator
-                                        representative will be at the airport to greet you. To arrange this please contact
-                                        our customer
-                                        service team once you have a confirmed booking.</div>
-                                </div>
-                            </div>
+                            ';
+                if ($row["faq_2"] != null) {
+                    echo '
+                             <div class="accordion-item py-2">
+                             <h2 class="accordion-header" id="flush-headingTwo">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne">
+                                     <i class="bi bi-question-circle text-danger fs-5 me-3"></i><span class="fw-bold fs-6">' . $row["faq_2"] . '</span>
+                                 </button>
+                             </h2>
+                             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                 <div class="accordion-body text-muted fs-6">Airport transfers are not included in the
+                                     price of this
+                                     tour, however you can book for an arrival transfer in advance. In this case a tour
+                                     operator
+                                     representative will be at the airport to greet you. To arrange this please contact
+                                     our customer
+                                     service team once you have a confirmed booking.</div>
+                             </div>
+                         </div>      
+                                ';
+                }
+
+                if ($row["faq_3"] != null) {
+                    echo '
+                    <div class="accordion-item py-2">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <i class="bi bi-question-circle text-danger fs-5 me-3"></i><span class="fw-bold fs-6">' . $row["faq_3"] . '</span>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-muted fs-6">Your tour will conclude in San Francisco on
+                            Day 8 of the
+                            trip. There are  activities planned  this day so youre free to depart at any
+                            time. We
+                            highly recommend booking post-accommodation to give yourself time to fully
+                            experience the
+                            wonders of this iconic city!</div>
+                    </div>
+                </div>      
+                                ';
+                }
+                echo '
+                            
     
-                            <div class="accordion-item py-2">
-                                <h2 class="accordion-header" id="flush-headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        <i class="bi bi-question-circle text-danger fs-5 me-3"></i><span class="fw-bold fs-6">' . $row["faq_3"] . '</span>
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body text-muted fs-6">Your tour will conclude in San Francisco on
-                                        Day 8 of the
-                                        trip. There are  activities planned  this day so youre free to depart at any
-                                        time. We
-                                        highly recommend booking post-accommodation to give yourself time to fully
-                                        experience the
-                                        wonders of this iconic city!</div>
-                                </div>
-                            </div>
+                            
     
                         </div>
                     </div>
@@ -625,7 +701,9 @@ include 'nav_bar.php';
                             <input type="hidden" value="' . $row["duration"] . '" class="form-control" name="duration">
                                 <div class="row mb-3 mx-4">
                                     <label class="pt-2 ps-1 mb-2" for="date">Date</label>
-                                    <input type="date" value="'; echo date("Y-m-d"); echo '" class="form-control" id="date" name="date" placeholder="" aria-label="Check out" required>
+                                    <input type="date" value="';
+                echo date("Y-m-d");
+                echo '" class="form-control" id="date" name="date" placeholder="" aria-label="Check out" required>
                                 </div>
                                 <div class="row mb-3 mx-4">
                                     <label class="pt-2 ps-1 mb-2" for="number1">Adults (Age 18+) </label>
@@ -641,18 +719,18 @@ include 'nav_bar.php';
                                 </div>
                                 <div class="text-center mt-4 mb-4 mx-4">
                                 ';
-                                session_start();
-                                
-                                if (isset($_SESSION['username']) && !empty($_SESSION['username'])){
-                                    echo '
+                session_start();
+
+                if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+                    echo '
                                     <button type="submit" id="submit" class="btn btn-danger w-100">BOOK NOW</button>                      
                                     ';
-                                }else{
-                                    echo '
+                } else {
+                    echo '
                                     <a href="" data-bs-toggle="modal" data-bs-target="#loginModal" data-backdrop="static" type="submit" class="btn btn-danger w-100">BOOK NOW</a>
                                     ';
-                                }
-                                echo '
+                }
+                echo '
                                 </div>
                             </form>
                         </div>
@@ -668,7 +746,7 @@ include 'nav_bar.php';
         ?>
 
         <!--Echo Start -->
-        
+
         <!--Echo End -->
     </div>
     <!-- tour header END -->

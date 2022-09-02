@@ -48,7 +48,7 @@ if ($result = mysqli_query($conn, $sql)) {
 
 <body>
     <div class="row justify-content-center m-0">
-        <div class="col-sm-2 bg-dark text-light text-center" style="height: 100vh;">
+        <div class="col-sm-2 bg-dark text-light text-center sticky-top" style="height: 100vh;">
             <h3 class="p-4">Admin <br> Panel</h3>
             <hr>
             <div class="list-group">

@@ -21,7 +21,7 @@ error_reporting(0);
 
 <body>
   <div class="row justify-content-center m-0">
-    <div class="col-sm-2 bg-dark text-light text-center" style="height: 100vh;">
+    <div class="col-sm-2 bg-dark text-light text-center sticky-top" style="height: 100vh;">
       <h3 class="p-4">Admin <br> Panel</h3>
       <hr>
       <div class="list-group">
@@ -35,31 +35,9 @@ error_reporting(0);
       </div>
     </div>
     <div class="col-sm-10 bg-light text-dark p-5">
-      <!-- Button trigger modal -->
-      <div class="d-flex">
-        <button type="button" class="btn btn-danger px-5 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Add New Tour
-        </button>
-      </div>
-
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="admin_tours_add.php" class="btn btn-danger px-5 me-3">
+        Add New Tour
+      </a>
 
       <table class="table mt-5 bg-white">
         <thead>
@@ -71,8 +49,9 @@ error_reporting(0);
             <th scope="col">Duration</th>
             <th scope="col">Ratings</th>
             <th scope="col">Active Status</th>
+            <th scope="col">View</th>
             <th scope="col">Edit</th>
-            <th scope="col">Deactivate</th>
+            <th scope="col">Change Status</th>
           </tr>
         </thead>
         <tbody>
@@ -96,10 +75,18 @@ error_reporting(0);
                <td>$row[ratings]</td>
                <td>$row[active]</td>
                <td>   
-                <a href='' class='btn btn-primary btn-sm editbtn'>Edit</a>
+                <a href='admin_tours_add.php?id=$row[id]' class='btn btn-success btn-sm'>View</a>
               </td>
-              <td>   
-                <a href='' class='btn btn-danger btn-sm'>Deactivate</a>
+               <td>   
+                <a href='admin_tours_add.php?id=$row[id]' class='btn btn-primary btn-sm editbtn'>Edit</a>
+              </td>
+              <td>";
+              if ("$row[active]" == 0) {
+                echo "<a href='change-status_tour.php?id=$row[id]&status=1' class='btn btn-danger btn-sm'>Activate</a>";
+              } else {
+                echo "<a href='change-status_tour.php?id=$row[id]&status=0' class='btn btn-danger btn-sm'>Deactivate</a>";
+              }
+              echo "        
               </td>
               </tr>";
             }

@@ -117,7 +117,7 @@
     color: black;
 }
 
-.modal-backdrop {
+/* .modal-backdrop {
     height: 100%;
     z-index: 100001 !important;
     position: unset !important;
@@ -125,7 +125,7 @@
 
 .modal {
     z-index: 100001 !important;
-}
+} */
 
 .current {
 	color: #df3e23;
