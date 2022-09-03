@@ -1,7 +1,6 @@
 <?php
 
 include 'config.php';
-include 'nav_bar.php';
 
 ?>
 
@@ -13,13 +12,14 @@ include 'nav_bar.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <link rel="stylesheet" href="css/contact.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+    <?php require_once 'nav_bar.php'; ?>
 
     <!-- contact form START -->
     <div class="container-contact" style="margin-top: 75px;">
@@ -101,50 +101,10 @@ include 'nav_bar.php';
     <!-- contact form END -->
 
     <!-- footer START -->
-    <section class="container-fluid bg-light py-5 px-5">
-        <div class="d-md-flex justify-content-around">
-            <div class="mb-5">
-                <h5 class="fw-bolder pb-4">Support</h5>
-                <p class="text-muted mb-2">Help Center</p>
-                <p class="text-muted mb-2">Our COVID-19 Response</p>
-                <p class="text-muted mb-2">Cancellation options</p>
-                <p class="text-muted mb-2">Safety information</p>
-            </div>
-            <div class="mb-5">
-                <h5 class="fw-bolder pb-4">Company</h5>
-                <p class="text-muted mb-2">About us</p>
-                <p class="text-muted mb-2">Community Blog</p>
-                <p class="text-muted mb-2">Careers</p>
-                <p class="text-muted mb-2">Privacy policy</p>
-                <p class="text-muted mb-2">Terms of service</p>
-            </div>
-            <div class="mb-5">
-                <h5 class="fw-bolder pb-4">Contact</h5>
-                <p class="text-muted mb-2">Partnerships</p>
-                <p class="text-muted mb-2">FAQ</p>
-                <p class="text-muted mb-2">Get in touch</p>
-            </div>
-            <div class="mb-5">
-                <h5 class="fw-bolder pb-4">Socials</h5>
-                <a class="px-2 text-secondary fs-2" href="#"><i class="bi bi-twitter"></i></a>
-                <a class="px-2 text-secondary fs-2" href="#"><i class="bi bi-instagram"></i></a>
-                <a class="px-2 text-secondary fs-2" href="#"><i class="bi bi-facebook"></i></a>
-                <a class="px-2 text-secondary fs-2" href="#"><i class="bi bi-youtube"></i></a>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center pt-5">
-            <p class="text-muted">Copyright &copy;2022 E-Tours & Travels LLC. Designed by <span class="text-danger">Md.
-                    Azmain
-                    Mahtab & Shiful Islam Piash.</span></p>
-        </div>
-
-    </section>
+    <?php require_once 'footer.php' ?>
     <!-- footer END-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/contact.js"></script>
 
 </body>

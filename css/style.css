@@ -127,6 +127,10 @@
     z-index: 100001 !important;
 } */
 
+.modal-backdrop {
+    position: unset !important;
+}
+
 .current {
-	color: #df3e23;
+    color: #df3e23;
 }
