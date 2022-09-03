@@ -1,36 +1,11 @@
-<?php
-
-include 'config.php';
-
-if (isset($_POST['submit'])) {
-    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
-    $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-    $tour_id = mysqli_real_escape_string($conn, $_GET['id']);
-    $adult_no = mysqli_real_escape_string($conn, $_GET['adult']);
-    $children_no = mysqli_real_escape_string($conn, $_GET['children']);
-    $infant_no =  mysqli_real_escape_string($conn, $_GET['infant']);
-    $date =  mysqli_real_escape_string($conn, $_GET['date']);
-
-    $sql = "INSERT INTO bookings (fname, lname, email, phone, tour_id, adult_no, children_no, infant_no, subtotal, b_date)
-                       VALUES('$fname','$lname','$email','$phone','$tour_id','$adult_no','$children_no','$infant_no','$subtotal','$date')";
-    mysqli_query($conn, $sql);
-
-    echo "<script>alert('Booking Success!')</script>";
-    // header('location:index.php');
-};
-
-?>
-
 <?php require_once 'head.php'; ?>
 
 <body>
 
     <?php require_once 'nav_bar.php'; ?>
 
-    <!-- Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <!-- Success Modal -->
+    <!-- <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -46,7 +21,7 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- checkout START -->
     <div class="container py-5" style="margin-top: 75px;">
@@ -221,6 +196,36 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+
+    <?php
+
+    include 'config.php';
+
+    if (isset($_POST['submit'])) {
+        $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+        $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+        $tour_id = mysqli_real_escape_string($conn, $_GET['id']);
+        $adult_no = mysqli_real_escape_string($conn, $_GET['adult']);
+        $children_no = mysqli_real_escape_string($conn, $_GET['children']);
+        $infant_no =  mysqli_real_escape_string($conn, $_GET['infant']);
+        $date =  mysqli_real_escape_string($conn, $_GET['date']);
+
+        $sql = "INSERT INTO bookings (firstname, lastname, email, phone, tour_id, adult_no, children_no, infant_no, subtotal, b_date)
+                       VALUES('$fname','$lname','$email','$phone','$tour_id','$adult_no','$children_no','$infant_no','$subtotal','$date')";
+        mysqli_query($conn, $sql);
+
+        echo "<script>alert('Booking Success!')</script>";
+        // echo "<script type='text/javascript'>
+        //       $(document).ready(function(){
+        //       $('#successModal').modal('show');
+        //       });
+        //       </script>";
+        //header('location: private_checkout.php');
+    };
+
+    ?>
     <!-- checkout END -->
 
     <!-- footer START -->

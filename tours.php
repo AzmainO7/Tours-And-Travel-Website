@@ -709,7 +709,7 @@ include 'config.php';
                                 </div>
                                 <div class="text-center mt-4 mb-4 mx-4">
                                 ';
-                session_start();
+                // session_start();
 
                 if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
                     echo '

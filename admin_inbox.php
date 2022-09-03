@@ -2,8 +2,6 @@
 
 include 'config.php';
 
-error_reporting(0);
-
 $sql = "SELECT * FROM Users";
 
 if ($result = mysqli_query($conn, $sql)) {

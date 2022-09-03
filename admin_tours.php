@@ -2,8 +2,6 @@
 
 include 'config.php';
 
-error_reporting(0);
-
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +33,7 @@ error_reporting(0);
       </div>
     </div>
     <div class="col-sm-10 bg-light text-dark p-5">
-      <a href="admin_tours_add.php" class="btn btn-danger px-5 me-3">
+      <a href="admin_tours_info.php" class="btn btn-danger px-5 me-3">
         Add New Tour
       </a>
 
@@ -75,16 +73,16 @@ error_reporting(0);
                <td>$row[ratings]</td>
                <td>$row[active]</td>
                <td>   
-                <a href='admin_tours_add.php?id=$row[id]' class='btn btn-success btn-sm'>View</a>
+                <a href='admin_tours_info.php?id=$row[id]' class='btn btn-success btn-sm'>View</a>
               </td>
                <td>   
-                <a href='admin_tours_add.php?id=$row[id]' class='btn btn-primary btn-sm editbtn'>Edit</a>
+                <a href='admin_tours_info.php?id=$row[id]' class='btn btn-primary btn-sm editbtn'>Edit</a>
               </td>
               <td>";
               if ("$row[active]" == 0) {
-                echo "<a href='change-status_tour.php?id=$row[id]&status=1' class='btn btn-danger btn-sm'>Activate</a>";
+                echo "<a href='admin_tours_change-status.php?id=$row[id]&status=1' class='btn btn-danger btn-sm'>Activate</a>";
               } else {
-                echo "<a href='change-status_tour.php?id=$row[id]&status=0' class='btn btn-danger btn-sm'>Deactivate</a>";
+                echo "<a href='admin_tours_change-status.php?id=$row[id]&status=0' class='btn btn-danger btn-sm'>Deactivate</a>";
               }
               echo "        
               </td>

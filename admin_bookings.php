@@ -2,8 +2,6 @@
 
 include 'config.php';
 
-error_reporting(0);
-
 ?>
 
 <!DOCTYPE html>
@@ -37,14 +35,14 @@ error_reporting(0);
     <div class="col-sm-10 bg-light text-dark p-5">
 
       <!-- Button trigger modal -->
-      <div class="d-flex">
+      <!-- <div class="d-flex">
         <button type="button" class="btn btn-danger px-5 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Add New Booking
         </button>
-      </div>
+      </div> -->
 
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -60,9 +58,9 @@ error_reporting(0);
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <table class="table mt-5 bg-white">
+      <table class="table bg-white">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -76,7 +74,6 @@ error_reporting(0);
             <th scope="col">Infants</th>
             <th scope="col">Subtotal</th>
             <th scope="col">View</th>
-            <th scope="col">Edit</th>
             <th scope="col">Cancel</th>
           </tr>
         </thead>
@@ -105,9 +102,6 @@ error_reporting(0);
                <td>$row[subtotal]</td>
                <td>   
                 <a href='' class='btn btn-success btn-sm'>View</a>
-              </td>
-               <td>   
-                <a href='' class='btn btn-primary btn-sm editbtn'>Edit</a>
               </td>
               <td>   
                 <a href='' class='btn btn-danger btn-sm'>Cancel</a>
