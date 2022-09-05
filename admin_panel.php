@@ -28,6 +28,14 @@ if ($result = mysqli_query($conn, $sql)) {
     $net_count = number_format((float)$subtotal, 2, '.', '');
 }
 
+$sql = "SELECT email, SUM(subtotal) AS spending FROM bookings GROUP BY email ORDER BY spending DESC;";
+
+if ($result = mysqli_query($conn, $sql)) {
+
+    $row = mysqli_fetch_assoc($result);
+    $net_spender = $row['email'];   
+}
+
 
 ?>
 
@@ -64,8 +72,8 @@ if ($result = mysqli_query($conn, $sql)) {
             <div class="row justify-content-around mt-5">
                 <div class="col-3">
                     <div class="py-5 text-center bg-danger text-light div-rounded">
-                        <h6 class="mb-3">TOP USER</h6>
-                        <h3>XXX</h3>
+                        <h6 class="mb-3">TOP USER(TOTAL SPENT)</h6>
+                        <h5 class="text-break mb-3"><?php echo "$net_spender" ?></h5>
                     </div>
                 </div>
                 <div class="col-3">

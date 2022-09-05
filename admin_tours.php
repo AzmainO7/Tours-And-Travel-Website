@@ -47,7 +47,6 @@ include 'config.php';
             <th scope="col">Duration</th>
             <th scope="col">Ratings</th>
             <th scope="col">Active Status</th>
-            <th scope="col">View</th>
             <th scope="col">Edit</th>
             <th scope="col">Change Status</th>
           </tr>
@@ -73,10 +72,7 @@ include 'config.php';
                <td>$row[ratings]</td>
                <td>$row[active]</td>
                <td>   
-                <a href='admin_tours_info.php?id=$row[id]' class='btn btn-success btn-sm'>View</a>
-              </td>
-               <td>   
-                <a href='admin_tours_info.php?id=$row[id]' class='btn btn-primary btn-sm editbtn'>Edit</a>
+                <a href='admin_tours_edit.php?id=$row[id]' class='btn btn-primary btn-sm editbtn'>Edit</a>
               </td>
               <td>";
               if ("$row[active]" == 0) {

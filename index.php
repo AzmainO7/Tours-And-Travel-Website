@@ -229,7 +229,7 @@ include 'config.php';
                 <div class="col-lg-3 mb-5">
                     <div class="card h-100 div-rounded" style="width: auto;">
                         <div class="img-wrapper div-rounded-top">
-                            <img src="images/sanfran-450x300 (1).jpg" class="card-img-top" alt="...">
+                            <img src="images/sanfran-450x300.jpg" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
                             <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>San Francisco</h6>
