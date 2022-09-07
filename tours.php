@@ -4,6 +4,7 @@ use Google\Service\Transcoder\Input;
 include 'config.php';
 
 //image dimention : 2 * 1
+error_reporting(0);
 
 ?>
 
