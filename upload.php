@@ -86,7 +86,7 @@ if (isset($_POST['update']) && isset($_FILES['title_img']) && isset($_FILES['ima
 
 
     if ($error === 0) {
-        if ($img_size > 125000) {
+        if ($img_size > 50000000) {
             $em = "Sorry, your file is too large.";
             header("Location: admin_tours_edit.php?error=$em");
         } else if ($img_size1 > 50000000) {
@@ -278,7 +278,7 @@ if (isset($_POST['submit']) && isset($_FILES['title_img']) && isset($_FILES['ima
 
 
     if ($error === 0) {
-        if ($img_size > 125000) {
+        if ($img_size > 50000000) {
             $em = "Sorry, your file is too large.";
             header("Location: admin_tours_info.php?error=$em");
         } else if ($img_size1 > 50000000) {
