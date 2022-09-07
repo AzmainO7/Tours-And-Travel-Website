@@ -33,7 +33,7 @@ include 'config.php';
 
 							<div class="wpb_single_image wpb_content_element vc_align_center">
 
-								<figure class="wpb_wrapper vc_figure">
+								<figure class="">
 									<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="570" height="184" src="https://shinetheme.com/travelerdata/citytour/wp-content/uploads/2018/12/about_1.jpg" class="vc_single_image-img attachment-full" alt="" loading="lazy" title="about_1" srcset="https://shinetheme.com/travelerdata/citytour/wp-content/uploads/2018/12/about_1.jpg 570w, https://shinetheme.com/travelerdata/citytour/wp-content/uploads/2018/12/about_1-600x193.jpg 600w, https://shinetheme.com/travelerdata/citytour/wp-content/uploads/2018/12/about_1-768x247.jpg 768w" sizes="(max-width: 570px) 100vw, 570px" /></div>
 								</figure>
 							</div>
@@ -46,7 +46,7 @@ include 'config.php';
 							</div>
 
 							<div class="wpb_text_column wpb_content_element  st-aboutus-content">
-								<div class="wpb_wrapper">
+								<div class="wpb_wrapper me-5">
 									<p>“You don’t choose the day you enter the world and you don’t chose the day you leave. It’s what you do in between that makes all the difference.” <br> – Anita Septimus <br> So, The World is full of adventures and all should have a taste of it ! </p>
 
 								</div>
@@ -60,7 +60,7 @@ include 'config.php';
 
 							<div class="wpb_single_image wpb_content_element vc_align_center">
 
-								<figure class="wpb_wrapper vc_figure">
+								<figure class="vc_figure">
 									<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="570" height="184" src="https://shinetheme.com/travelerdata/citytour/wp-content/uploads/2018/12/about_2.png" class="vc_single_image-img attachment-full" alt="" loading="lazy" title="about_2" srcset="https://shinetheme.com/travelerdata/citytour/wp-content/uploads/2018/12/about_2.png 570w, https://shinetheme.com/travelerdata/citytour/wp-content/uploads/2018/12/about_2-600x193.png 600w, https://shinetheme.com/travelerdata/citytour/wp-content/uploads/2018/12/about_2-768x247.png 768w" sizes="(max-width: 570px) 100vw, 570px" /></div>
 								</figure>
 							</div>
@@ -73,7 +73,7 @@ include 'config.php';
 							</div>
 
 							<div class="wpb_text_column wpb_content_element  st-aboutus-content">
-								<div class="wpb_wrapper">
+								<div class="wpb_wrapper me-5">
 									<p>Our mission is to provide the best service to customers so that they always select us. The the world is full of adventures and we want people have the nicest taste of it. We’ve built a reputation through honesty and communication with our clients. We work long hours so our clients see the results of our efforts and stick with us for years to come.</p>
 
 								</div>
@@ -90,8 +90,8 @@ include 'config.php';
 		<!--LEADERSHIP -->
 
 		<section class="container my-5 pb-5">
-			<div class="mb-5 text-center">
-				<h1 class="fw-bolder">Leadership Team</h1>
+			<div class="mb-4 text-center">
+				<h1 class="fw-bolder">Meet The Developers Behind The Website</h1>
 			</div>
 			<div class="container">
 				<div class="row justify-content-center text-center">

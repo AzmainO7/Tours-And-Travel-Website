@@ -13,7 +13,7 @@ include 'config.php';
     <!-- popular tours START -->
     <section class="container pt-4 my-5">
         <div class="mb-2 text-center">
-            <h1 class="fw-bolder pb-2">United States</h1>
+            <h1 class="fw-bolder pb-3">United States</h1>
         </div>
         <div class="container">
             <div class="row justify-content-center text-center">
