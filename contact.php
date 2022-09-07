@@ -24,7 +24,7 @@ include 'config.php';
     <!-- contact form START -->
     <div class="container-contact" style="margin-top: 25px;">
         <span class="big-circle"></span>
-        
+
         <div class="form-contact">
             <div class="contact-info">
                 <h3 class="title">Let's get in touch</h3>
@@ -72,15 +72,17 @@ include 'config.php';
                 <span class="circle one"></span>
                 <span class="circle two"></span>
 
-                <form action = "contact.php" onsubmit="sendEmail()">
+                <form action="" method="POST">
                     <h3 class="title">Contact us</h3>
                     <div class="input-container">
-                        <input type="text" name="name" class="input" />
+                        <input type="text" name="name" class="input"/>
+                        <!-- <input type="text" name="name" class="input" value="<?= $_SESSION['username'] ?>" /> -->
                         <label for="">Username</label>
                         <span>Username</span>
                     </div>
                     <div class="input-container">
-                        <input type="email" name="email" class="input" />
+                        <input type="email" name="email" class="input"/>
+                        <!-- <input type="email" name="email" class="input" value="<?= $_SESSION['user_email_address'] ?>" /> -->
                         <label for="">Email</label>
                         <span>Email</span>
                     </div>
@@ -94,30 +96,31 @@ include 'config.php';
                         <label for="">Message</label>
                         <span>Message</span>
                     </div>
-                    <input type="submit" value="Send" class="btn-contact" />
+                    <button class="btn-contact" name="submit" type="submit">Send</button>
+                    <!-- <input type="submit" value="Send" class="btn-contact" /> -->
                 </form>
             </div>
         </div>
     </div>
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <?php
 
-<script>
-    function sendEmail(){
-        Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "robinn96a@gmail.com",
-        Password : "FA70684B112EDD41674526A28E0F9734DBC9",
-        To : 'saifulpiash00@gmail.com',
-        From : document.getElementById("email").value ,
-        Subject : "New Contact From Enquiry",
-        Body : "And this is the body"
-    }).then(
-    message => alert(message)
-);
-    }
+    include 'config.php';
 
-</script>
+    if (isset($_POST['submit'])) {
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+        $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+        $sql = "INSERT INTO Inbox (username, email, phone, message)
+                       VALUES('$name','$email','$phone','$message')";
+        mysqli_query($conn, $sql);
+
+        echo "<script>alert('Message Sent!')</script>";
+    };
+
+    ?>
 
     <!-- contact form END -->
 

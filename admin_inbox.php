@@ -74,7 +74,7 @@ if ($result = mysqli_query($conn, $sql)) {
         <tbody>
           <?php
 
-          $sql = "SELECT * FROM Tours";
+          $sql = "SELECT * FROM Inbox";
           $stmt = mysqli_stmt_init($conn);
           if (!mysqli_stmt_prepare($stmt, $sql)) {
             echo "SQL statement failed";
@@ -85,12 +85,12 @@ if ($result = mysqli_query($conn, $sql)) {
             while ($row = mysqli_fetch_assoc($result)) {
               echo "<tr>
               <th scope='row'>$row[id]</th>
-               <td>$row[title]</td>
-               <td>$row[price]</td>
-               <td>$row[destination]</td>
-               <td>$row[duration]</td>
+               <td>$row[username]</td>
+               <td>$row[email]</td>
+               <td>$row[phone]</td>
+               <td>$row[message]</td>
                <td>   
-                <a href='admin_tours_add.php?id=$row[id]' class='btn btn-danger btn-sm'>Reply</a>
+                <a href='.php?id=$row[id]' class='btn btn-danger btn-sm'>Reply</a>
               </td>
               </tr>";
             }
