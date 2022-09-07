@@ -11,7 +11,7 @@ include 'config.php';
     <?php require_once 'nav_bar.php'; ?>
 
     <!--listing calender -->
-    <section class="container mb-5" style="margin-top: 130px;">
+    <section class="container mb-5" style="margin-top: 80px;">
 
         <div class="">
             <form class="d-flex bg-light p-3 div-rounded justify-content-evenly text-center" action="" method="POST">

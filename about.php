@@ -12,7 +12,7 @@ include 'config.php';
     <!-- story,mission -->
 
 
-    <div class="container" style="margin-top: 75px;">
+    <div class="container" style="margin-top: 25px;">
         <div class="vc_row wpb_row st bg-holder">
             <div class='container '><div class='row'>
 	<div class="wpb_column column_container col-md-12">

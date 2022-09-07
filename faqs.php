@@ -11,7 +11,7 @@ include 'config.php';
     <?php require_once 'nav_bar.php'; ?>
     
     <!-- FAQs START -->
-    <div class="container mb-5 pb-5 pt-5" style="margin-top: 75px;">
+    <div class="container mb-5 pb-5 pt-5" style="margin-top: 25px;">
         <div>
             <div class="mb-5 pb-3 text-center">
                 <h1 class="fw-bold">Frequently Asked Questions</h1>

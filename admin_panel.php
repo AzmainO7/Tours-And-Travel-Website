@@ -33,7 +33,8 @@ $sql = "SELECT email, SUM(subtotal) AS spending FROM bookings GROUP BY email ORD
 if ($result = mysqli_query($conn, $sql)) {
 
     $row = mysqli_fetch_assoc($result);
-    $net_spender = $row['email'];   
+    $net_spender = $row['email']; 
+    $net_spending = $row['spending'];     
 }
 
 
@@ -71,25 +72,26 @@ if ($result = mysqli_query($conn, $sql)) {
             <h2>Dashboard</h2>
             <div class="row justify-content-around mt-5">
                 <div class="col-3">
-                    <div class="py-5 text-center bg-danger text-light div-rounded">
+                    <div class="py-5 text-center bg-danger text-light div-rounded" style="height: 200px;">
                         <h6 class="mb-3">TOP USER(TOTAL SPENT)</h6>
-                        <h5 class="text-break mb-3"><?php echo "$net_spender" ?></h5>
+                        <h5 class="text-break"><?php echo "$net_spender" ?></h5>
+                        <h5 class="">$<?php echo "$net_spending" ?></h5>
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="py-5 text-center bg-danger text-light div-rounded">
+                    <div class="py-5 text-center bg-danger text-light div-rounded" style="height: 200px;">
                         <h6 class="mb-3">NET EARNING TOTAL</h6>
-                        <h3><?php echo "$net_count" ?></h3>
+                        <h3>$<?php echo "$net_count" ?></h3>
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="py-5 text-center bg-danger text-light div-rounded">
+                    <div class="py-5 text-center bg-danger text-light div-rounded" style="height: 200px;">
                         <h6 class="mb-3">TOTAL USERS</h6>
                         <h3><?php echo "$user_count" ?></h3>
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="py-5 text-center bg-danger text-light div-rounded">
+                    <div class="py-5 text-center bg-danger text-light div-rounded" style="height: 200px;">
                         <h6 class="mb-3">TOTAL TOURS</h6>
                         <h3><?php echo "$tour_count" ?></h3>
                     </div>

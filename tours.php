@@ -26,7 +26,7 @@ include 'config.php';
 
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<div class="row justify-content-center">
-                <div class="col-lg-9 pe-lg-5" style="padding-top: 90px;">
+                <div class="col-lg-9 pe-lg-5" style="padding-top: 40px;">
     
                     <!-- tour images START -->
                     <div class="bg-light mb-5">
@@ -680,8 +680,8 @@ include 'config.php';
     
                 <!-- booking form START -->
                 <div class="col-lg-3 px-0">
-                    <div class="sticky-top" style="padding-top: 90px;">
-                        <div class="border border-danger">
+                    <div class="sticky-top" style="padding-top: 40px;">
+                        <div class="border border-danger" style="padding-top: 30px;">
                         <h5 class="p-4 bg-danger text-light">from<span class="fw-bold fs-3 ms-2">$' . $row["price"] . '</span></h5>
                             <form action="private_checkout.php" method="GET">
                             <input type="hidden" value="' . $row["id"] . '" class="form-control" name="id"> 
@@ -711,7 +711,7 @@ include 'config.php';
                                 ';
                 // session_start();
 
-                if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+                if ((isset($_SESSION['username']) && !empty($_SESSION['username'])) || $login_button == '') {
                     echo '
                                     <button type="submit" id="submit" class="btn btn-danger w-100">BOOK NOW</button>                      
                                     ';

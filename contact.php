@@ -22,7 +22,7 @@ include 'config.php';
     <?php require_once 'nav_bar.php'; ?>
 
     <!-- contact form START -->
-    <div class="container-contact" style="margin-top: 75px;">
+    <div class="container-contact" style="margin-top: 25px;">
         <span class="big-circle"></span>
         <img src="images/shape.png" class="square" alt="" />
         <div class="form-contact">

@@ -104,7 +104,7 @@ include 'config.php';
                 <a href='' class='btn btn-success btn-sm'>View</a>
               </td>
               <td>   
-                <a href='' class='btn btn-danger btn-sm'>Cancel</a>
+                <a href='admin_bookings_cancel.php?id=$row[id]' class='btn btn-danger btn-sm'>Cancel</a>
               </td>
               </tr>";
             }

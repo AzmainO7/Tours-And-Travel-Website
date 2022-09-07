@@ -12,7 +12,7 @@ include 'config.php';
 
     <!-- Carousel -->
 
-    <section class="container pt-5 my-5" style="margin-top: 75px;">
+    <section class="container pt-5 my-5" style="margin-top: 25px;">
 
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">

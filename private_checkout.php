@@ -24,7 +24,7 @@
     </div> -->
 
     <!-- checkout START -->
-    <div class="container py-5" style="margin-top: 75px;">
+    <div class="container py-5" style="margin-top: 25px;">
         <div class="row justify-content-center">
             <div class="col-lg-8 pe-4">
                 <h4 class="fw-bold mb-4">Booking Submission</h4>

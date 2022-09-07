@@ -12,7 +12,7 @@ include 'config.php';
 
     <!-- home section START -->
     <!-- <section class="pb-5"> -->
-    <section class="pb-5" style="margin-top: 75px;">
+    <section class="pb-5" style="margin-top: 25px;">
 
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
