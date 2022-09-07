@@ -24,26 +24,27 @@ include 'config.php';
     <!-- contact form START -->
     <div class="container-contact" style="margin-top: 25px;">
         <span class="big-circle"></span>
-        <img src="images/shape.png" class="square" alt="" />
+        
         <div class="form-contact">
             <div class="contact-info">
                 <h3 class="title">Let's get in touch</h3>
                 <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                    dolorum adipisci recusandae praesentium dicta!
+                    We'd Love to hear from you.<br>
+
+                    Whether you are curious about features, a free trial, or even press- we are ready to answer any and all questions.
                 </p>
 
                 <div class="info">
                     <div class="information">
-                        <img src="images/location.png" class="icon-contact" alt="" />
+                        <img src="images/icons8-address-48.png" class="icon-contact" alt="" />
                         <p>92 Cherry Drive Uniondale, NY 11553</p>
                     </div>
                     <div class="information">
-                        <img src="images/email.png" class="icon-contact" alt="" />
-                        <p>lorem@ipsum.com</p>
+                        <img src="images/icons8-mail-96.png" class="icon-contact" alt="" />
+                        <p>Etours00@tour.com</p>
                     </div>
                     <div class="information">
-                        <img src="images/phone.png" class="icon-contact" alt="" />
+                        <img src="images/icons8-phone-50.png" class="icon-contact" alt="" />
                         <p>123-456-789</p>
                     </div>
                 </div>
@@ -71,7 +72,7 @@ include 'config.php';
                 <span class="circle one"></span>
                 <span class="circle two"></span>
 
-                <form action="index.html" autocomplete="off">
+                <form action = "contact.php" onsubmit="sendEmail()">
                     <h3 class="title">Contact us</h3>
                     <div class="input-container">
                         <input type="text" name="name" class="input" />
@@ -98,6 +99,26 @@ include 'config.php';
             </div>
         </div>
     </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+    function sendEmail(){
+        Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "robinn96a@gmail.com",
+        Password : "FA70684B112EDD41674526A28E0F9734DBC9",
+        To : 'saifulpiash00@gmail.com',
+        From : document.getElementById("email").value ,
+        Subject : "New Contact From Enquiry",
+        Body : "And this is the body"
+    }).then(
+    message => alert(message)
+);
+    }
+
+</script>
+
     <!-- contact form END -->
 
     <!-- footer START -->

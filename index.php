@@ -10,7 +10,7 @@ include 'config.php';
 
 <body>
 
-<?php require_once 'nav_bar.php'; ?>
+    <?php require_once 'nav_bar.php'; ?>
 
     <!-- home section START -->
     <!-- <section class="pb-5"> -->
@@ -198,37 +198,60 @@ include 'config.php';
     <!-- promotional banner END-->
 
     <!-- popular tours START -->
+
     <section class="container pt-5 my-5">
         <div class="mb-5 text-center">
             <h1 class="fw-bolder pb-5">Popular Tours</h1>
         </div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-3 mb-5">
-                    <div class="card h-100 div-rounded" style="width: auto;">
-                        <div class="img-wrapper div-rounded-top">
-                            <img src="images/nyork-450x300.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>New York</h6>
-                            <h5 class="card-title fw-bolder mb-3">Two Hour Walking Tour of Manhattan</h5>
-                            <p class="text-muted mb-5"><i class="bi bi-star-fill text-warning me-2"></i><span class="text-dark fw-bolder">5 </span>(3 reviews)</p>
-                            <div class="card-footer bg-white pt-4 pb-0">
-                                <div class="row">
-                                    <div class="col-6 m-0 p-0">
-                                        <h6 class="text-dark fw-bolder"><span class="text-muted me-2">From</span>$100,00
-                                        </h6>
-                                    </div>
-                                    <div class="col-6 text-end m-0 p-0">
-                                        <p class="text-muted"><i class="bi bi-clock me-2"></i>10 hours</p>
+
+                <?php
+
+                $sql = "SELECT * FROM Tours INNER JOIN Bookings ON Tours.id = Bookings.tour_id GROUP BY Bookings.tour_id ORDER BY COUNT(Bookings.tour_id) DESC LIMIT 4";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    echo "SQL statement failed";
+                } else {
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '
+                        <div class="col-lg-3 mb-5">
+                            <a href = "tours.php?id=' . $row["tour_id"] . '" style = "color: inherit; text-decoration: inherit;">
+                            <div class="card h-100 div-rounded" style="width: auto;">
+                                <div class="img-wrapper div-rounded-top">
+                                    <img src=' . $row["title_img"] . ' class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
+                                    <h5 class="card-title fw-bolder mb-3">' . $row["title"] . '</h5>
+                                    <p class="text-muted mb-5"><i class="bi bi-star-fill text-warning me-2"></i><span class="text-dark fw-bolder">' . $row["ratings"] . ' </span>(' . $row["total_ratings"] . ' reviews)</p>
+                                    <div class="card-footer bg-white pt-4 pb-0">
+                                        <div class="row">
+                                            <div class="col-6 m-0 p-0">
+                                                <h6 class="text-dark fw-bolder"><span class="text-muted me-2">From</span>$' . $row["price"] . '
+                                                </h6>
+                                            </div>
+                                            <div class="col-6 text-end m-0 p-0">
+                                                <p class="text-muted"><i class="bi bi-clock me-2"></i>' . $row["duration"] . ' days</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </div>
-                    </div>
-                </div>
+                        ';
+                    }
+                }
 
-                <div class="col-lg-3 mb-5">
+                ?>
+
+
+
+                <!-- <div class="col-lg-3 mb-5">
                     <div class="card h-100 div-rounded" style="width: auto;">
                         <div class="img-wrapper div-rounded-top">
                             <img src="images/sanfran-450x300.jpg" class="card-img-top" alt="...">
@@ -250,7 +273,7 @@ include 'config.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="col-lg-3 mb-5">
                     <div class="card h-100">
@@ -278,7 +301,7 @@ include 'config.php';
                     </div>
                 </div> -->
 
-                <div class="col-lg-3 mb-5">
+                <!-- <div class="col-lg-3 mb-5">
                     <div class="card h-100 div-rounded" style="width: auto;">
                         <div class="img-wrapper div-rounded-top">
                             <img src="images/calfor-450x300.jpg" class="card-img-top" alt="...">
@@ -301,7 +324,7 @@ include 'config.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="col-lg-3 mb-5">
                     <div class="card h-100">
@@ -330,7 +353,7 @@ include 'config.php';
                     </div>
                 </div> -->
 
-                <div class="col-lg-3 mb-5">
+                <!-- <div class="col-lg-3 mb-5">
                     <div class="card h-100 div-rounded" style="width: auto;">
                         <div class="img-wrapper div-rounded-top">
                             <img src="images/newj-450x300.jpg" class="card-img-top" alt="...">
@@ -352,7 +375,7 @@ include 'config.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="col-lg-3 mb-5">
                     <div class="card h-100">

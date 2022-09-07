@@ -71,7 +71,7 @@ include 'config.php';
                 if ($row["image_3"] != null) {
                     echo '
                     <div class="carousel-item">
-                        <img src=' . $row["image_3"] . ' class="img-fluid px-0" alt="...">
+                        <img src=' . $row["image_3"] . ' class="img-fluid px-0" style="height: 65vh;" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                         </div>
                     </div> 
@@ -124,7 +124,7 @@ include 'config.php';
                             <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
                         </div>
                         <div class="col-4 text-end">
-                            <h6 class="mb-2">Excellent</h6>
+                            <h6 class="mb-2">Terrible</h6>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
@@ -143,7 +143,7 @@ include 'config.php';
                             <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
                         </div>
                         <div class="col-4 text-end">
-                            <h6 class="mb-2">Excellent</h6>
+                            <h6 class="mb-2">Poor</h6>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
@@ -162,7 +162,7 @@ include 'config.php';
                             <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
                         </div>
                         <div class="col-4 text-end">
-                            <h6 class="mb-2">Excellent</h6>
+                            <h6 class="mb-2">Average</h6>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star-fill text-warning me-1"></i>
@@ -181,7 +181,7 @@ include 'config.php';
                             <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
                         </div>
                         <div class="col-4 text-end">
-                            <h6 class="mb-2">Excellent</h6>
+                            <h6 class="mb-2">Very Good</h6>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star-fill text-warning me-1"></i>
@@ -211,25 +211,6 @@ include 'config.php';
                     </div>    
                     <hr>
                     ';
-                } else if ($row["ratings"] > 1 && $row["ratings"] < 2) {
-                    echo '
-                        <div class="row justify-content-center">
-                        <div class="col-8">
-                            <h2 class="fw-bold mb-3">' . $row["title"] . '</h2>
-                            <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
-                        </div>
-                        <div class="col-4 text-end">
-                            <h6 class="mb-2">Excellent</h6>
-                            <i class="bi bi-star text-warning me-1"></i>
-                            <i class="bi bi-star text-warning me-1"></i>
-                            <i class="bi bi-star text-warning me-1"></i>
-                            <i class="bi bi-star text-warning me-1"></i>
-                            <i class="bi bi-star text-warning"></i>
-                            <h6 class="mt-2">from ' . $row["total_ratings"] . ' reviews</h6>
-                        </div>
-                    </div>    
-                    <hr>
-                    ';
                 } else {
                     echo '
                         <div class="row justify-content-center">
@@ -238,7 +219,7 @@ include 'config.php';
                             <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
                         </div>
                         <div class="col-4 text-end">
-                            <h6 class="mb-2">Excellent</h6>
+                            <h6 class="mb-2">No Rating</h6>
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
@@ -342,7 +323,7 @@ include 'config.php';
     
                                         <div class="d-flex justify-content-start p-2">
                                             <div class="img-wrapper">
-                                                <img src="images/Day 1.jpg" class="mw-100" alt="">
+                                                <img src=' . $row["image_1"] . ' class="mw-100" alt="">
                                             </div>
                                             <div>
                                                 <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
@@ -363,7 +344,7 @@ include 'config.php';
                                     <div class="accordion-body text-muted fs-6">
                                     <div class="d-flex justify-content-start p-2">
                                     <div class="img-wrapper">
-                                        <img src="images/Day 1.jpg" class="mw-100" alt="">
+                                        <img src=' . $row["image_2"] . ' class="mw-100" alt="">
                                     </div>
                                     <div>
                                         <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
@@ -374,7 +355,7 @@ include 'config.php';
                             </div>
     
                             ';
-                if ($row["itn_day3"] != null) {
+                if ($row["itn_day3"] != null && $row["image_3"] != null) {
                     echo '
                                 <div class="accordion-item my-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
@@ -386,7 +367,7 @@ include 'config.php';
                                     <div class="accordion-body text-muted fs-6">
                                         <div class="d-flex justify-content-center p-2">
                                             <div class="img-wrapper">
-                                                <img src="images/Day 3.jpg" class="mw-100" alt="">
+                                                <img src=' . $row["image_3"] . ' class="mw-100" alt="">
                                             </div>
                                             <div>
                                                 <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
@@ -398,7 +379,7 @@ include 'config.php';
                                 ';
                 }
 
-                if ($row["itn_day4"] != null) {
+                if ($row["itn_day4"] != null && $row["image_4"] != null) {
                     echo '
                                 <div class="accordion-item my-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
@@ -410,7 +391,7 @@ include 'config.php';
                                     <div class="accordion-body text-muted fs-6">
                                         <div class="d-flex justify-content-center p-2">
                                             <div class="img-wrapper">
-                                                <img src="images/Day 4.jpg" class="mw-100" alt="">
+                                                <img src=' . $row["image_4"] . ' class="mw-100" alt="">
                                             </div>
                                             <div>
                                                 <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
@@ -421,7 +402,7 @@ include 'config.php';
                             </div>
                                 ';
                 }
-                if ($row["itn_day5"] != null) {
+                if ($row["itn_day5"] != null && $row["image_5"] != null) {
                     echo '
                                 <div class="accordion-item my-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
@@ -433,7 +414,7 @@ include 'config.php';
                                     <div class="accordion-body text-muted fs-6">
                                         <div class="d-flex justify-content-center p-2">
                                             <div class="img-wrapper">
-                                                <img src="images/Day 5.jpg" class="mw-100" alt="">
+                                                <img src=' . $row["image_5"] . ' class="mw-100" alt="">
                                             </div>
                                             <div>
                                                 <p class="ps-4">From the iconic to the unexpected, the city of San Francisco never ceases to surprise. Kick-start your effortlessly delivered Northern California holiday in the cosmopolitan hills of The City. Join your Travel Director and fellow travellers for a Welcome Reception at your hotel.Welcome Reception</p>
@@ -668,19 +649,18 @@ include 'config.php';
     
                         </div>
     
-                        <div class="text-center mt-5">
+                        <div class="mt-5">
                         <form action="rate.php" method="GET">
                         <input type="hidden" value="' . $row["id"] . '" class="form-control" name="tourId"> 
                         <input type="hidden" value="' . $_SESSION['user_email_address'] . '" class="form-control" name="useremail">
+                        <input class="text-center py-1 px-1" value="1" min="1" max="5" type="number" name="rating" id="rating">
                         
-                        <input class="text-center py-1" value="1" min="1" max="5" type="number" name="rating" id="rating">
-                        <i class="bi bi-star-fill fs-3 text-warning mx-2"></i>
 
                         ';
 
                 if ((isset($_SESSION['username']) && !empty($_SESSION['username'])) || $login_button == '') {
                     echo '
-                            <button type="submit" id="rate" name="rate" class="btn btn-danger px-3">Rate</button>                      
+                            <button type="submit" id="rate" name="rate" class="btn btn-danger px-5">RATE</button>                      
                             ';
                 } else {
                     echo '
