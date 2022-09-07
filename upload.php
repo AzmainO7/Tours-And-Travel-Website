@@ -144,30 +144,30 @@ if (isset($_POST['update']) && isset($_FILES['title_img']) && isset($_FILES['ima
                 $em = "You can't upload files of this type";
                 header("Location: admin_tours_edit.php?error5=$em");
             } else {
-                $new_img_name = "image-title-" . $title . '.' . $img_ex_lc;
+                $new_img_name = "image-title-" . $tourId . '.' . $img_ex_lc;
                 $img_upload_path = 'uploads/' . $new_img_name;
                 move_uploaded_file($tmp_name, $img_upload_path);
 
-                $new_img_name1 = "image-01-" . $title . '.' . $img_ex_lc1;
+                $new_img_name1 = "image-01-" . $tourId . '.' . $img_ex_lc1;
                 $img_upload_path1 = 'uploads/' . $new_img_name1;
                 move_uploaded_file($tmp_name1, $img_upload_path1);
 
-                $new_img_name2 = "image-02-" . $title . '.' . $img_ex_lc2;
+                $new_img_name2 = "image-02-" . $tourId . '.' . $img_ex_lc2;
                 $img_upload_path2 = 'uploads/' . $new_img_name2;
                 move_uploaded_file($tmp_name2, $img_upload_path2);
 
                 if ($img_ex_lc3 != null) {
-                    $new_img_name3 = "image-03-" . $title . '.' . $img_ex_lc3;
+                    $new_img_name3 = "image-03-" . $tourId . '.' . $img_ex_lc3;
                     $img_upload_path3 = 'uploads/' . $new_img_name3;
                     move_uploaded_file($tmp_name3, $img_upload_path3);
                 }
                 if ($img_ex_lc4 != null) {
-                    $new_img_name4 = "image-04-" . $title . '.' . $img_ex_lc4;
+                    $new_img_name4 = "image-04-" . $tourId . '.' . $img_ex_lc4;
                     $img_upload_path4 = 'uploads/' . $new_img_name4;
                     move_uploaded_file($tmp_name4, $img_upload_path4);
                 }
                 if ($img_ex_lc5 != null) {
-                    $new_img_name5 = "image-05-" . $title . '.' . $img_ex_lc5;
+                    $new_img_name5 = "image-05-" . $tourId . '.' . $img_ex_lc5;
                     $img_upload_path5 = 'uploads/' . $new_img_name5;
                     move_uploaded_file($tmp_name5, $img_upload_path5);
                 }
@@ -336,30 +336,30 @@ if (isset($_POST['submit']) && isset($_FILES['title_img']) && isset($_FILES['ima
                 $em = "You can't upload files of this type";
                 header("Location: admin_tours_info.php?error5=$em");
             } else {
-                $new_img_name = "image-title-" . $title . '.' . $img_ex_lc;
+                $new_img_name = "image-title-" . $tourId . '.' . $img_ex_lc;
                 $img_upload_path = 'uploads/' . $new_img_name;
                 move_uploaded_file($tmp_name, $img_upload_path);
 
-                $new_img_name1 = "image-01-" . $title . '.' . $img_ex_lc1;
+                $new_img_name1 = "image-01-" . $tourId . '.' . $img_ex_lc1;
                 $img_upload_path1 = 'uploads/' . $new_img_name1;
                 move_uploaded_file($tmp_name1, $img_upload_path1);
 
-                $new_img_name2 = "image-02-" . $title . '.' . $img_ex_lc2;
+                $new_img_name2 = "image-02-" . $tourId . '.' . $img_ex_lc2;
                 $img_upload_path2 = 'uploads/' . $new_img_name2;
                 move_uploaded_file($tmp_name2, $img_upload_path2);
 
                 if ($img_ex_lc3 != null) {
-                    $new_img_name3 = "image-03-" . $title . '.' . $img_ex_lc3;
+                    $new_img_name3 = "image-03-" . $tourId . '.' . $img_ex_lc3;
                     $img_upload_path3 = 'uploads/' . $new_img_name3;
                     move_uploaded_file($tmp_name3, $img_upload_path3);
                 }
                 if ($img_ex_lc4 != null) {
-                    $new_img_name4 = "image-04-" . $title . '.' . $img_ex_lc4;
+                    $new_img_name4 = "image-04-" . $tourId . '.' . $img_ex_lc4;
                     $img_upload_path4 = 'uploads/' . $new_img_name4;
                     move_uploaded_file($tmp_name4, $img_upload_path4);
                 }
                 if ($img_ex_lc5 != null) {
-                    $new_img_name5 = "image-05-" . $title . '.' . $img_ex_lc5;
+                    $new_img_name5 = "image-05-" . $tourId . '.' . $img_ex_lc5;
                     $img_upload_path5 = 'uploads/' . $new_img_name5;
                     move_uploaded_file($tmp_name5, $img_upload_path5);
                 }

@@ -78,7 +78,7 @@ include 'config.php';
                             <div class="card-body">
                                 <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
                                 <h5 class="card-title fw-bolder mb-3">' . $row["title"] . '</h5>
-                                <p class="text-muted mb-5"><i class="bi bi-star-fill text-warning me-2"></i><span class="text-dark fw-bolder">' . $row["ratings"] . ' </span>(3 reviews)</p>
+                                <p class="text-muted mb-5"><i class="bi bi-star-fill text-warning me-2"></i><span class="text-dark fw-bolder">' . $row["ratings"] . ' </span>(' . $row["total_ratings"] . ' reviews)</p>
                                 <div class="card-footer bg-white pt-4 pb-0">
                                     <div class="row">
                                         <div class="col-6 m-0 p-0">
@@ -116,7 +116,7 @@ include 'config.php';
                                 <div class="card-body">
                                     <h6 class="text-muted"><i class="bi bi-geo-alt me-2"></i>' . $row["destination"] . '</h6>
                                     <h5 class="card-title fw-bolder mb-3">' . $row["title"] . '</h5>
-                                    <p class="text-muted mb-5"><i class="bi bi-star-fill text-warning me-2"></i><span class="text-dark fw-bolder">' . $row["ratings"] . ' </span>(3 reviews)</p>
+                                    <p class="text-muted mb-5"><i class="bi bi-star-fill text-warning me-2"></i><span class="text-dark fw-bolder">' . $row["ratings"] . ' </span>(' . $row["total_ratings"] . ' reviews)</p>
                                     <div class="card-footer bg-white pt-4 pb-0">
                                         <div class="row">
                                             <div class="col-6 m-0 p-0">

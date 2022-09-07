@@ -1,4 +1,5 @@
 <?php
+use Google\Service\Transcoder\Input;
 
 include 'config.php';
 
@@ -129,7 +130,7 @@ include 'config.php';
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning"></i>
-                            <h6 class="mt-2">from 3 reviews</h6>
+                            <h6 class="mt-2">from ' . $row["total_ratings"] . ' reviews</h6>
                         </div>
                     </div>    
                     <hr>
@@ -148,7 +149,7 @@ include 'config.php';
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning"></i>
-                            <h6 class="mt-2">from 3 reviews</h6>
+                            <h6 class="mt-2">from ' . $row["total_ratings"] . ' reviews</h6>
                         </div>
                     </div>    
                     <hr>
@@ -167,7 +168,7 @@ include 'config.php';
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning"></i>
-                            <h6 class="mt-2">from 3 reviews</h6>
+                            <h6 class="mt-2">from ' . $row["total_ratings"] . ' reviews</h6>
                         </div>
                     </div>    
                     <hr>
@@ -186,7 +187,7 @@ include 'config.php';
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star text-warning"></i>
-                            <h6 class="mt-2">from 3 reviews</h6>
+                            <h6 class="mt-2">from ' . $row["total_ratings"] . ' reviews</h6>
                         </div>
                     </div>    
                     <hr>
@@ -205,7 +206,7 @@ include 'config.php';
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star-fill text-warning me-1"></i>
                             <i class="bi bi-star-fill text-warning"></i>
-                            <h6 class="mt-2">from 3 reviews</h6>
+                            <h6 class="mt-2">from ' . $row["total_ratings"] . ' reviews</h6>
                         </div>
                     </div>    
                     <hr>
@@ -224,7 +225,7 @@ include 'config.php';
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning"></i>
-                            <h6 class="mt-2">from 3 reviews</h6>
+                            <h6 class="mt-2">from ' . $row["total_ratings"] . ' reviews</h6>
                         </div>
                     </div>    
                     <hr>
@@ -243,7 +244,7 @@ include 'config.php';
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning me-1"></i>
                             <i class="bi bi-star text-warning"></i>
-                            <h6 class="mt-2">from 0 reviews</h6>
+                            <h6 class="mt-2">from ' . $row["total_ratings"] . ' reviews</h6>
                         </div>
                     </div>    
                     <hr>
@@ -602,7 +603,7 @@ include 'config.php';
                                 <div class="col-lg-5 text-center p-5 border-end">
                                     <h5 class="text-danger pt-4"><span class="fw-bold fs-1">' . $row["ratings"] . '</span>/5</h5>
                                     <h5>Excellent</h5>
-                                    <p class="text-muted">Based on <span class="text-danger">3 reviews</span></p>
+                                    <p class="text-muted">Based on <span class="text-danger">' . $row["total_ratings"] . ' reviews</span></p>
                                 </div>
     
                                 <div class="col-lg-7 p-5 text-end">
@@ -667,11 +668,30 @@ include 'config.php';
     
                         </div>
     
-                        <div class="text-center">
-                            <a href="#" class="btn btn-danger mt-5 mb-2 px-5">Review</a>
+                        <div class="text-center mt-5">
+                        <form action="rate.php" method="GET">
+                        <input type="hidden" value="' . $row["id"] . '" class="form-control" name="tourId"> 
+                        <input type="hidden" value="' . $_SESSION['user_email_address'] . '" class="form-control" name="useremail">
+                        
+                        <input class="text-center py-1" value="1" min="1" max="5" type="number" name="rating" id="rating">
+                        <i class="bi bi-star-fill fs-3 text-warning mx-2"></i>
+
+                        ';
+
+                if ((isset($_SESSION['username']) && !empty($_SESSION['username'])) || $login_button == '') {
+                    echo '
+                            <button type="submit" id="rate" name="rate" class="btn btn-danger px-3">Rate</button>                      
+                            ';
+                } else {
+                    echo '
+                            <a href="" data-bs-toggle="modal" data-bs-target="#loginModal" data-backdrop="static" type="submit" class="btn btn-danger  px-3">Rate</a>
+                            ';
+                }
+                echo '
+                     </form>
                         </div>
-    
-    
+                        
+
                     </div>
                     <!-- reviews END -->
     
@@ -686,7 +706,11 @@ include 'config.php';
                         <div class="border border-danger" style="padding-top: 30px;">
                         <h5 class="p-4 bg-danger text-light">from<span class="fw-bold fs-3 ms-2">$' . $row["price"] . '</span></h5>
                             <form action="private_checkout.php" method="GET">
-                            <input type="hidden" value="' . $_SESSION['user_email_address'] . '" class="form-control" name="useremail"> 
+                            ';
+                if (!empty($_SESSION['user_email_address'])) {
+                    echo '<input type="hidden" value="' . $_SESSION['user_email_address'] . '" class="form-control" name="useremail">';
+                }
+                echo '                        
                             <input type="hidden" value="' . $row["id"] . '" class="form-control" name="id"> 
                             <input type="hidden" value="' . $row["title"] . '" class="form-control" name="title">
                             <input type="hidden" value="' . $row["destination"] . '" class="form-control" name="destination"> 
