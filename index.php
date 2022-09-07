@@ -145,14 +145,41 @@ include 'config.php';
         </div>
         <div class="container">
             <div class="row justify-content-center text-center">
-                <div class="col-lg-3">
-                    <div class="img-wrapper rounded-circle m-5">
-                        <img class="mw-100" src="images/New-York-City-400x400.jpg" alt="">
-                    </div>
-                    <h4>New York City</h4>
-                    <p>2 tours</p>
-                </div>
-                <div class="col-lg-3">
+
+                <?php
+
+                $sql = "SELECT * FROM Destinations
+                INNER JOIN Tours ON Destinations.name = Tours.destination
+                INNER JOIN Bookings ON Tours.id = Bookings.tour_id GROUP BY Bookings.tour_id ORDER BY COUNT(Bookings.tour_id) DESC LIMIT 4";
+                $stmt = mysqli_stmt_init($conn);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    echo "SQL statement failed";
+                } else {
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="col-lg-3">
+                        <div class="img-wrapper rounded-circle m-5">
+                            <img class="mw-100" src=' . $row["picture"] . ' alt="">
+                        </div>
+                        <h4>' . $row["name"] . '</h4>
+                        ';
+                        $name = $row["name"];
+                        $sql1 = "SELECT COUNT(tours.id) as total_tours FROM destinations INNER JOIN tours ON destinations.name = tours.destination WHERE destinations.name = '$name'";
+                        if ($result1 = mysqli_query($conn, $sql1)) {
+                            $row1 = mysqli_fetch_assoc($result1);
+                            echo '
+                            <p>' . $row1['total_tours'] . ' tours</p>';
+                        }
+                        echo '
+                        </div>';
+                    }
+                }
+
+                ?>
+
+                <!-- <div class="col-lg-3">
                     <div class="img-wrapper rounded-circle m-5">
                         <img class="mw-100" src="images/San-Francisco-400x400.jpg" alt="">
                     </div>
@@ -172,7 +199,7 @@ include 'config.php';
                     </div>
                     <h4>New Jersey</h4>
                     <p>2 tours</p>
-                </div>
+                </div> -->
 
             </div>
         </div>
