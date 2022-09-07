@@ -19,11 +19,22 @@ include 'config.php';
                 <div class="text-dark">
                     <label for="" class="form-label"><i class="bi bi-geo-alt me-2"></i>Destination</label>
                     <select class="form-control div-rounded-less px-5" name="destinations" id="destinations">
-                        <option value="" selected>Select Destination</option>
-                        <option>New York</option>
-                        <option>San Francisco</option>
-                        <option>California</option>
-                        <option>New Jersey</option>
+                        <?php
+                        $sql = "SELECT * FROM Destinations";
+                        $stmt = mysqli_stmt_init($conn);
+                        if (!mysqli_stmt_prepare($stmt, $sql)) {
+                            echo "SQL statement failed";
+                        } else {
+                            mysqli_stmt_execute($stmt);
+                            $result = mysqli_stmt_get_result($stmt);
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '
+                                                <option>' . $row["name"] . '</option>
+                                                ';
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
 

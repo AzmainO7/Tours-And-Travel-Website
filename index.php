@@ -33,10 +33,22 @@ include 'config.php';
                                 <div class="col-4 ps-4 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-geo-alt me-2"></i>Destination</label>
                                     <select class="form-control div-rounded-less" name="" id="">
-                                        <option>New York</option>
-                                        <option>San Francisco</option>
-                                        <option>California</option>
-                                        <option>New Jersey</option>
+                                        <?php
+                                        $sql = "SELECT * FROM Destinations";
+                                        $stmt = mysqli_stmt_init($conn);
+                                        if (!mysqli_stmt_prepare($stmt, $sql)) {
+                                            echo "SQL statement failed";
+                                        } else {
+                                            mysqli_stmt_execute($stmt);
+                                            $result = mysqli_stmt_get_result($stmt);
+                        
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                echo '
+                                                <option>' . $row["name"] . '</option>
+                                                ';
+                                            }
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-3 text-dark text-start">
@@ -67,10 +79,22 @@ include 'config.php';
                                 <div class="col-4 ps-4 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-geo-alt me-2"></i>Destination</label>
                                     <select class="form-control rounded-pill" name="" id="">
-                                        <option>New York City</option>
-                                        <option>San Francisco</option>
-                                        <option>California</option>
-                                        <option>New Jersey</option>
+                                    <?php
+                                        $sql = "SELECT * FROM Destinations";
+                                        $stmt = mysqli_stmt_init($conn);
+                                        if (!mysqli_stmt_prepare($stmt, $sql)) {
+                                            echo "SQL statement failed";
+                                        } else {
+                                            mysqli_stmt_execute($stmt);
+                                            $result = mysqli_stmt_get_result($stmt);
+                        
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                echo '
+                                                <option>' . $row["name"] . '</option>
+                                                ';
+                                            }
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-3 text-dark text-start">
@@ -100,10 +124,22 @@ include 'config.php';
                                 <div class="col-4 ps-4 text-dark text-start">
                                     <label for="" class="form-label ps-2"><i class="bi bi-geo-alt me-2"></i>Destination</label>
                                     <select class="form-control rounded-pill" name="" id="">
-                                        <option>New York City</option>
-                                        <option>San Francisco</option>
-                                        <option>California</option>
-                                        <option>New Jersey</option>
+                                    <?php
+                                        $sql = "SELECT * FROM Destinations";
+                                        $stmt = mysqli_stmt_init($conn);
+                                        if (!mysqli_stmt_prepare($stmt, $sql)) {
+                                            echo "SQL statement failed";
+                                        } else {
+                                            mysqli_stmt_execute($stmt);
+                                            $result = mysqli_stmt_get_result($stmt);
+                        
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                echo '
+                                                <option>' . $row["name"] . '</option>
+                                                ';
+                                            }
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-3 text-dark text-start">
@@ -178,28 +214,6 @@ include 'config.php';
                 }
 
                 ?>
-
-                <!-- <div class="col-lg-3">
-                    <div class="img-wrapper rounded-circle m-5">
-                        <img class="mw-100" src="images/San-Francisco-400x400.jpg" alt="">
-                    </div>
-                    <h4>San Francisco</h4>
-                    <p>1 tours</p>
-                </div>
-                <div class="col-lg-3">
-                    <div class="img-wrapper rounded-circle m-5">
-                        <img class="mw-100" src="images/California-400x400.jpg" alt="">
-                    </div>
-                    <h4>California</h4>
-                    <p>2 tours</p>
-                </div>
-                <div class="col-lg-3">
-                    <div class="img-wrapper rounded-circle m-5">
-                        <img class="mw-100" src="images/New-Jersey-400x400.jpg" alt="">
-                    </div>
-                    <h4>New Jersey</h4>
-                    <p>2 tours</p>
-                </div> -->
 
             </div>
         </div>

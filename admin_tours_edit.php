@@ -52,7 +52,7 @@ include 'config.php';
                     $tour = mysqli_fetch_array($result);
             ?>
                     <form action="upload.php" method="POST" enctype="multipart/form-data" class="row g-4 mt-4">
-                        <input type="hidden" name="tour_id" value="<?=$tour['id'];?>">
+                        <input type="hidden" name="tour_id" value="<?= $tour['id']; ?>">
                         <div class="col-md-12">
                             <label for="inputEmail4" class="form-label">title <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" value="<?= $tour['title']; ?>" placeholder="" name="title" required>
@@ -73,11 +73,22 @@ include 'config.php';
                         <div class="col-md-4">
                             <label for="" class="form-label">destination <span class="text-danger">*</label>
                             <select class="form-control" name="destination" id="destinations">
-                                <option selected><?= $tour['destination']; ?></option>
-                                <option>New York</option>
-                                <option>San Francisco</option>
-                                <option>California</option>
-                                <option>New Jersey</option>
+                                <?php
+                                $sql = "SELECT * FROM Destinations";
+                                $stmt = mysqli_stmt_init($conn);
+                                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                                    echo "SQL statement failed";
+                                } else {
+                                    mysqli_stmt_execute($stmt);
+                                    $result = mysqli_stmt_get_result($stmt);
+
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo '
+                                                <option>' . $row["name"] . '</option>
+                                                ';
+                                    }
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="col-md-4">

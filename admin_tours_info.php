@@ -62,10 +62,22 @@ include 'config.php';
                 <div class="col-md-4">
                     <label for="" class="form-label">destination <span class="text-danger">*</label>
                     <select class="form-control" name="destination" id="destinations">
-                        <option>New York</option>
-                        <option>San Francisco</option>
-                        <option>California</option>
-                        <option>New Jersey</option>
+                        <?php
+                        $sql = "SELECT * FROM Destinations";
+                        $stmt = mysqli_stmt_init($conn);
+                        if (!mysqli_stmt_prepare($stmt, $sql)) {
+                            echo "SQL statement failed";
+                        } else {
+                            mysqli_stmt_execute($stmt);
+                            $result = mysqli_stmt_get_result($stmt);
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '
+                                                <option>' . $row["name"] . '</option>
+                                                ';
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="col-md-4">
