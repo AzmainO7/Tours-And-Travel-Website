@@ -1,3 +1,4 @@
+
 <?php require_once 'head.php'; ?>
 
 <body>
@@ -40,7 +41,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Email <span class="text-danger">*</label>
-                        <input type="email" class="form-control" placeholder="email@domain.com" name="email" required>
+                        <input type="email" class="form-control bg-white" value="<?= $_GET['useremail']; ?>" name="email" disabled>
                     </div>
                     <div class="col-md-6">
                         <label for="inputPassword4" class="form-label">Phone <span class="text-danger">*</label>

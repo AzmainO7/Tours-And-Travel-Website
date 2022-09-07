@@ -59,7 +59,7 @@ include 'config.php';
                         </div>
 
                         <div class="col-md-12">
-                            <label for="imgTitle" class="form-label">title_img <span class="text-danger">* </label>
+                            <label for="imgTitle" class="form-label">title_img (Image Dimentions : 450 * 300) <span class="text-danger">* </label>
                             <input type="file" name="title_img" class="form-control">
                             <?php if (isset($_GET['error'])) : ?>
                                 <p class="text-danger pt-1"><?php echo $_GET['error']; ?></p>
@@ -72,8 +72,8 @@ include 'config.php';
                         </div>
                         <div class="col-md-4">
                             <label for="" class="form-label">destination <span class="text-danger">*</label>
-                            <select class="form-control" name="destination" id="destinations" required>
-                                <option value=""  selected><?= $tour['destination']; ?></option>
+                            <select class="form-control" name="destination" id="destinations">
+                                <option selected><?= $tour['destination']; ?></option>
                                 <option>New York</option>
                                 <option>San Francisco</option>
                                 <option>California</option>
@@ -102,35 +102,35 @@ include 'config.php';
                         </div>
 
                         <div class="col-md-12">
-                            <label for="inputPassword4" class="form-label">image_1 <span class="text-danger">*</label>
+                            <label for="inputPassword4" class="form-label">image_1 (Image Dimentions : 2 * 1) <span class="text-danger">*</label>
                             <input type="file" name="image_1" value="<? $tour['title']; ?>" class="form-control">
                             <?php if (isset($_GET['error1'])) : ?>
                                 <p class="text-danger pt-1"><?php echo $_GET['error1']; ?></p>
                             <?php endif ?>
                         </div>
                         <div class="col-md-12">
-                            <label for="inputPassword4" class="form-label">image_2 <span class="text-danger">*</label>
+                            <label for="inputPassword4" class="form-label">image_2 (Image Dimentions : 2 * 1) <span class="text-danger">*</label>
                             <input type="file" name="image_2" value="<? $tour['title']; ?>" class="form-control">
                             <?php if (isset($_GET['error2'])) : ?>
                                 <p class="text-danger pt-1"><?php echo $_GET['error2']; ?></p>
                             <?php endif ?>
                         </div>
                         <div class="col-md-12">
-                            <label for="inputPassword4" class="form-label">image_3</label>
+                            <label for="inputPassword4" class="form-label">image_3 (Image Dimentions : 2 * 1) </label>
                             <input type="file" name="image_3" value="<? $tour['title']; ?>" class="form-control">
                             <?php if (isset($_GET['error3'])) : ?>
                                 <p class="text-danger pt-1"><?php echo $_GET['error3']; ?></p>
                             <?php endif ?>
                         </div>
                         <div class="col-md-12">
-                            <label for="inputPassword4" class="form-label">image_4</label>
+                            <label for="inputPassword4" class="form-label">image_4 (Image Dimentions : 2 * 1) </label>
                             <input type="file" name="image_4" value="<? $tour['title']; ?>" class="form-control">
                             <?php if (isset($_GET['error4'])) : ?>
                                 <p class="text-danger pt-1"><?php echo $_GET['error4']; ?></p>
                             <?php endif ?>
                         </div>
                         <div class="col-md-12">
-                            <label for="inputPassword4" class="form-label">image_5</label>
+                            <label for="inputPassword4" class="form-label">image_5 (Image Dimentions : 2 * 1) </label>
                             <input type="file" name="image_5" value="<? $tour['title']; ?>" class="form-control">
                             <?php if (isset($_GET['error5'])) : ?>
                                 <p class="text-danger pt-1"><?php echo $_GET['error5']; ?></p>

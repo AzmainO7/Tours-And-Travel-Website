@@ -2,6 +2,8 @@
 
 include 'config.php';
 
+//Home image size dimention = 1900 * 810
+
 ?>
 
 <?php require_once 'head.php'; ?>
@@ -22,7 +24,7 @@ include 'config.php';
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/istockphoto-1363398400-170667a.jpg" class="d-block w-100" alt="...">
+                    <img src="images/Home1.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-block">
                         <h1 class="mb-5 fw-bold stroke">Your world of joy</h1>
                         <h4 class="d-none d-sm-block mb-5 stroke">Find what makes you happy anytime, anywhere</h4>
@@ -56,7 +58,7 @@ include 'config.php';
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/attractive-stylish-young-woman-khaki-dress-desert-traveling-africa-safari-wearing-hat-backpack-taking-photo-vintage-camera.jpg" class="d-block w-100" alt="...">
+                    <img src="images/Home2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-block">
                         <h1 class="mb-5 fw-bold stroke">Your world of joy</h1>
                         <h4 class="d-none d-sm-block mb-5 stroke">Find what makes you happy anytime, anywhere</h4>
@@ -89,7 +91,7 @@ include 'config.php';
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/TravelMain.jpg" class="d-block w-100" alt="...">
+                    <img src="images/Home4.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-block">
                         <h1 class="mb-5 fw-bold stroke">Your world of joy</h1>
                         <h4 class="d-none d-sm-block mb-5 stroke">Find what makes you happy anytime, anywhere</h4>

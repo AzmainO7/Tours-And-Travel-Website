@@ -1,10 +1,7 @@
 <?php
 
-include 'config.php';
-
 //google login start
 include 'config_google.php';
-
 $login_button = '';
 
 //This $_GET["code"] variable value received after user has login into their Google Account redirct to PHP script then this variable value has been received
@@ -57,6 +54,8 @@ if (!isset($_SESSION['access_token'])) {
 
 //google login end
 
+include 'config.php';
+
 session_start();
 
 if (isset($_POST['login'])) {
@@ -73,12 +72,13 @@ if (isset($_POST['login'])) {
         $row = mysqli_fetch_array($result);
 
         $_SESSION['username'] = $row['username'];
+        $_SESSION['user_email_address'] = $row['email'];
         header('location:index.php');
     } else {
         // $error[] = 'incorrect email or password!';
         echo "<script>alert('incorrect email or password!')</script>";
     }
-};
+}
 
 if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -114,26 +114,7 @@ if (isset($_POST['register'])) {
             // header('location:login_form.php');
         }
     }
-
-    // if ($password == $cpassword) {
-    //     $sql = "INSERT INTO Users (username, email, password)
-    //             VALUES ('$username', '$email', '$password')";
-    //     $result = mysqli_query($conn, $sql);
-    //     if ($result) {
-    //         echo 'User Registration Complete';
-    //         $username = "";
-    //         $email = "";
-    //         $password = "";
-    //         $cpassword = "";
-    //     } else {
-    //         echo 'Oops! Something Went Wrong';
-    //     }
-    // } else {
-    //     echo 'Password Not Matched';
-    // }
-
-
-};
+}
 
 ?>
 
@@ -183,7 +164,7 @@ if (isset($_POST['register'])) {
             <?php } else if ($login_button == '') { ?>
 
                 <div>
-                    <?php echo '<img src="' . $_SESSION['user_image'] . '" class="img-responsive img-circle img-thumbnail" />'; ?>
+                    <?php echo '<img src="' . $_SESSION["user_image"] . '" class="rounded-circle me-2" style="height: 30px; width: 30px;" />'; ?>
                     <a><span class="text-danger"><?php echo $_SESSION['user_email_address'] ?></span></a>
                     <a href="logout_google.php" class="ps-4 text-dark">logout</a>
                 </div>

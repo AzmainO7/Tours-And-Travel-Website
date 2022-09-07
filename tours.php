@@ -2,6 +2,8 @@
 
 include 'config.php';
 
+//image dimention : 2 * 1
+
 ?>
 
 <?php require_once 'head.php'; ?>
@@ -55,12 +57,12 @@ include 'config.php';
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src=' . $row["image_1"] . ' class="d-block mx-auto mw-100" style="height: 65vh;" alt="...">
+                                    <img src=' . $row["image_1"] . ' class="img-fluid px-0" style="height: 65vh;" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src=' . $row["image_2"] . ' class="d-block mx-auto mw-100" style="height: 65vh;" alt="...">
+                                    <img src=' . $row["image_2"] . ' class="img-fluid px-0" style="height: 65vh;" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                     </div>
                                 </div>
@@ -78,7 +80,7 @@ include 'config.php';
                 if ($row["image_4"] != null) {
                     echo '
                     <div class="carousel-item">
-                        <img src=' . $row["image_4"] . ' class="d-block mx-auto mw-100" style="height: 65vh;" alt="...">
+                        <img src=' . $row["image_4"] . ' class="img-fluid px-0" style="height: 65vh;" alt="...">
                         <div class="carousel-caption d-none d-md-block">
 
                         </div>
@@ -88,7 +90,7 @@ include 'config.php';
                 if ($row["image_5"] != null) {
                     echo '
                     <div class="carousel-item">
-                        <img src=' . $row["image_5"] . ' class="d-block mx-auto mw-100" style="height: 65vh;" alt="...">
+                        <img src=' . $row["image_5"] . ' class="img-fluid px-0" style="height: 65vh;" alt="...">
                         <div class="carousel-caption d-none d-md-block">
 
                         </div>
@@ -684,6 +686,7 @@ include 'config.php';
                         <div class="border border-danger" style="padding-top: 30px;">
                         <h5 class="p-4 bg-danger text-light">from<span class="fw-bold fs-3 ms-2">$' . $row["price"] . '</span></h5>
                             <form action="private_checkout.php" method="GET">
+                            <input type="hidden" value="' . $_SESSION['user_email_address'] . '" class="form-control" name="useremail"> 
                             <input type="hidden" value="' . $row["id"] . '" class="form-control" name="id"> 
                             <input type="hidden" value="' . $row["title"] . '" class="form-control" name="title">
                             <input type="hidden" value="' . $row["destination"] . '" class="form-control" name="destination"> 
